@@ -12,57 +12,54 @@ type Group = { label: string; muted?: boolean; skills: Skill[] }
 
 const GROUPS: Group[] = [
   {
-    label: 'Front-end',
+    label: 'Desenvolvimento',
     skills: [
-      { name: 'HTML5', color: '#e44d26' },
-      { name: 'CSS3', color: '#2196f3' },
-      { name: 'JavaScript', color: '#f7df1e' },
-      { name: 'TypeScript', color: '#4c8bf5' },
-      { name: 'React', color: '#38e0ff' },
-      { name: 'Next.js', color: '#e6eaf2' },
-      { name: 'Tailwind CSS', color: '#22d3ee' },
+      { name: 'Java', color: '#f89820' },
+      { name: 'Lógica de Programação', color: '#a78bfa' },
     ],
   },
   {
-    label: 'Back-end & Dados',
+    label: 'Sistemas corporativos',
     skills: [
-      { name: 'Node.js', color: '#6cc24a' },
-      { name: 'Python', color: '#ffd43b' },
-      { name: 'C++', color: '#6aa9e0' },
-      { name: 'SQL', color: '#f59e0b' },
-      { name: 'PostgreSQL', color: '#5b9bd5' },
+      { name: 'TOTVS', color: '#60a5fa' },
+      { name: 'TASY (Java e HTML5)', color: '#4ade80' },
+      { name: 'RIS/PACS', color: '#2dd4bf' },
     ],
   },
   {
-    label: 'Dados & Tráfego',
+    label: 'Suporte & Infra',
     skills: [
-      { name: 'Power BI', color: '#f2c811' },
-      { name: 'Análise de Dados', color: '#a78bfa' },
-      { name: 'Meta Ads', color: '#0a84ff' },
-      { name: 'Google Ads', color: '#fbbc05' },
+      { name: 'Troubleshooting', color: '#fb923c' },
+      { name: 'Análise de Incidentes', color: '#f472b6' },
+      { name: 'Gestão de Acessos', color: '#38bdf8' },
+      { name: 'Suporte a Hardware e Software', color: '#34d399' },
     ],
   },
   {
-    label: 'Infra & Ferramentas',
+    label: 'Metodologias',
     skills: [
-      { name: 'Git & GitHub', color: '#f0652f' },
-      { name: 'Infraestrutura de TI', color: '#34d399' },
-      { name: 'Redes', color: '#2dd4bf' },
+      { name: 'Scrum', color: '#22d3ee' },
+      { name: 'Métodos Ágeis', color: '#818cf8' },
     ],
   },
   {
-    label: 'Soft skills',
+    label: 'Cursos',
     muted: true,
     skills: [
-      { name: 'Resolução de Problemas' },
-      { name: 'Comunicação Assertiva' },
-      { name: 'Trabalho em Equipe' },
+      { name: 'Java — EACH-USP · 19,5 h' },
+      { name: 'Lógica de Programação — DIO · 4 h' },
+      { name: 'Projetos Ágeis com Scrum — DIO · 2 h' },
+      { name: 'Marketing Digital — Google Ateliê Digital · 40 h' },
     ],
   },
   {
     label: 'Idiomas',
     muted: true,
-    skills: [{ name: 'Inglês · Intermediário' }, { name: 'Espanhol · Básico' }],
+    skills: [
+      { name: 'Português · Nativo' },
+      { name: 'Inglês · Básico' },
+      { name: 'Coreano · Básico' },
+    ],
   },
 ]
 

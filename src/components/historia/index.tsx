@@ -10,39 +10,39 @@ gsap.registerPlugin(ScrollTrigger);
 //  SUAS FOTOS (retrato ao lado da história)
 //  Os dois arquivos ficam em /public/reveal/. Para usar as suas fotos, basta
 //  substituir esses arquivos mantendo os mesmos nomes (ou trocar os caminhos).
-//  Hoje são placeholders gerados automaticamente.
+//  Hoje são placeholders (iniciais "GB") — troque pelas suas fotos.
 //    1ª imagem → PRETO E BRANCO (aparece em repouso)
 //    2ª imagem → COLORIDA       (revelada sob o ponteiro / dedo)
 // ─────────────────────────────────────────────────────────────────────────
-const FOTO_PB = '/reveal/matheus-pb.jpg';
-const FOTO_COLOR = '/reveal/matheus-color.jpg';
+const FOTO_PB = '/reveal/gaby-pb.jpg';
+const FOTO_COLOR = '/reveal/gaby-color.jpg';
 
 const CHAPTERS = [
   {
     num: '01',
-    year: '2023',
-    keyword: 'REDES & INFRA',
-    kicker: '// as fundações na Thales Group',
-    body: 'Comecei pelas entranhas da TI, não pela tela. Como Jovem Aprendiz de Infraestrutura na Thales Group — uma multinacional —, cuidei de redes e IPs, administrei contas de usuário e operei o sistema de chamados, mantendo tudo no ar. Aprendi como a tecnologia funciona por baixo: camada sobre camada.',
-    tags: ['Infraestrutura de TI', 'Redes', 'Ticketing', 'Thales Group'],
+    year: '2022',
+    keyword: 'LÓGICA',
+    kicker: '// os primeiros códigos na ETEC',
+    body: 'Comecei no Ensino Médio Integrado ao Técnico em Desenvolvimento de Sistemas da ETEC de Itaquaquecetuba. Para ir além da sala de aula, fiz o curso de Java da EACH-USP (USP Leste) e os cursos de Lógica de Programação e Projetos Ágeis com Scrum da DIO. Foi ali que aprendi a pensar como dev.',
+    tags: ['Java', 'Lógica', 'Scrum', 'ETEC'],
     accent: '#2f6bff',
   },
   {
     num: '02',
-    year: '2024',
-    keyword: 'DESENVOLVIMENTO',
-    kicker: '// criando produtos digitais de alto impacto',
-    body: 'Da infraestrutura, parti para construir o que se vê. Como freelancer, desenvolvo landing pages de alta conversão para o setor imobiliário e comercial — de HTML, CSS e JavaScript a React. Interfaces responsivas, foco em UI/UX, velocidade e captação de leads. Cada cliente, um problema novo — aprendi fazendo.',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'React'],
+    year: '2023',
+    keyword: 'PESSOAS',
+    kicker: '// atendimento e suporte no CNA',
+    body: 'Meu primeiro emprego foi como Assistente Administrativo no CNA Itaim Paulista. Entre atendimento ao cliente e apoio administrativo, também cuidava do suporte básico à rede e aos equipamentos da unidade. Aprendi a ouvir quem está do outro lado — e a resolver o problema dela.',
+    tags: ['Atendimento', 'Suporte', 'Redes', 'CNA'],
     accent: '#38e0ff',
   },
   {
     num: '03',
     year: '2025',
-    keyword: 'SISTEMAS & DADOS',
-    kicker: '// liderança tech e análise de performance',
-    body: 'Hoje toco várias frentes. À frente do desenvolvimento da Compromisso, plataforma educacional que construí do início ao fim. Na Next Home, como Analista de Tráfego e Performance, transformo dados em decisão (Meta/Google Ads, CPC, CTR, conversão). E concilio a Engenharia de Software na FIAP com automação residencial (IoT) — da interface ao hardware.',
-    tags: ['EdTech', 'Tráfego Pago', 'Power BI', 'IoT'],
+    keyword: 'HELP DESK',
+    kicker: '// sistemas críticos no Hospital BP',
+    body: 'Entrei no Hospital BP como Aprendiz de Service Desk, em Gestão de Acessos e Monitoria, e fui efetivada como Técnica em Help Desk Júnior. Hoje dou suporte a TOTVS, TASY e RIS/PACS, enquanto curso Análise e Desenvolvimento de Sistemas na FIAP — o próximo passo é levar essa visão ao desenvolvimento.',
+    tags: ['Hospital BP', 'TOTVS', 'TASY', 'FIAP'],
     accent: '#e9edf7',
   },
 ] as const;
@@ -60,18 +60,18 @@ const EASE_OUT = [0.4,  0, 0.6, 1]    as const;
 // Cada tag tem a sua cor (mesma linguagem da seção Skills); cai para o accent
 // do capítulo se a tag não estiver no mapa.
 const TAG_COLORS: Record<string, string> = {
-  'HTML5': '#e44d26',
-  'CSS3': '#2196f3',
-  'JavaScript': '#f7df1e',
-  'React': '#38e0ff',
-  'Power BI': '#f2c811',
-  'Infraestrutura de TI': '#34d399',
+  'Java': '#f89820',
+  'Lógica': '#a78bfa',
+  'Scrum': '#34d399',
+  'ETEC': '#f87171',
+  'Atendimento': '#f472b6',
+  'Suporte': '#fb923c',
   'Redes': '#38bdf8',
-  'Ticketing': '#fb923c',
-  'Thales Group': '#818cf8',
-  'EdTech': '#a78bfa',
-  'Tráfego Pago': '#f472b6',
-  'IoT': '#2dd4bf',
+  'CNA': '#818cf8',
+  'Hospital BP': '#2dd4bf',
+  'TOTVS': '#60a5fa',
+  'TASY': '#4ade80',
+  'FIAP': '#ec4899',
 };
 
 // As tags sobem em cascata, coloridas, quando o capítulo entra na tela.
@@ -307,7 +307,7 @@ export default function HistoriaSection() {
               <RevealSpotlight
                 bwSrc={FOTO_PB}
                 colorSrc={FOTO_COLOR}
-                alt="Matheus Goes da Silva"
+                alt="Gabriely Bonfim Silva"
                 hint="passe o mouse · arraste o dedo"
               />
               <figcaption className="mt-3 font-code text-[10px] uppercase tracking-[0.3em] text-white/30">

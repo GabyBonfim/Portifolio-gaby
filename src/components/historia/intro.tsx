@@ -7,10 +7,10 @@ import ParticleField from '@/components/effects/ParticleField';
 import InkReveal from '@/components/ui/ink-reveal';
 
 const STATS = [
-  { value: 'FIAP',        label: 'Engenharia de Software',   sub: 'Conclusão em 2028' },
-  { value: 'Thales',      label: 'Multinacional Tech',       sub: 'Fundações em Infraestrutura' },
-  { value: 'Freelancer',  label: 'Aplicações Web & Design',  sub: 'Projetos Reais no Ar' },
-  { value: 'Dev + Dados', label: 'Performance & Analytics',  sub: 'Web · Tráfego · Power BI' },
+  { value: 'FIAP',        label: 'Análise e Desenv. de Sistemas', sub: 'Conclusão em dez/2026' },
+  { value: 'Hospital BP', label: 'Técnica em Help Desk Jr.',       sub: 'TOTVS · TASY · RIS/PACS' },
+  { value: 'ETEC',        label: 'Técnico em Desenv. de Sistemas', sub: 'Concluído em 2024' },
+  { value: 'Java',        label: 'Desenvolvimento',                sub: 'Rumo ao Full Stack Júnior' },
 ];
 
 const inView = { once: true, margin: '-10% 0px -10% 0px' };
@@ -99,7 +99,7 @@ export default function HistoriaIntro() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-14 lg:gap-20 items-start">
 
-          {/* ── LEFT: quem é o Matheus ── */}
+          {/* ── LEFT: quem é a Gabriely ── */}
           <div>
             {/* Section heading */}
             <motion.h2
@@ -122,10 +122,11 @@ export default function HistoriaIntro() {
               variants={rise}
               className="font-editorial text-2xl italic leading-snug text-white/65 max-w-2xl mb-6 md:text-[1.65rem]"
             >
-              Sou o Matheus — desenvolvedor full stack apaixonado por construir
-              soluções digitais completas. Comecei como jovem aprendiz em
-              infraestrutura e evolui naturalmente para o desenvolvimento de
-              produtos que as pessoas realmente usam.
+              Sou a Gabriely — estudante de Análise e Desenvolvimento de
+              Sistemas na FIAP, com formação técnica em Desenvolvimento de
+              Sistemas pela ETEC. Hoje sou Técnica em Help Desk Júnior no
+              Hospital BP, dando suporte a sistemas críticos como TOTVS, TASY
+              e RIS/PACS.
             </motion.p>
 
             {/* Secondary bio */}
@@ -133,11 +134,10 @@ export default function HistoriaIntro() {
               variants={rise}
               className="font-editorial text-xl italic leading-relaxed text-white/42 max-w-xl mb-12 md:text-[1.25rem]"
             >
-              Hoje concilio a atuação como freelancer e analista de tráfego com
-              minha formação em Engenharia de Software pela FIAP. Do setor
-              imobiliário a uma plataforma educacional própria — e do código à
-              análise de dados e performance — meu foco é entregar interfaces
-              limpas e resultado real.
+              O Service Desk me deu uma visão prática de como usuários reais
+              usam os sistemas, onde eles falham e como diagnosticar problemas.
+              Agora busco minha primeira oportunidade como Desenvolvedora Full
+              Stack Júnior para levar essa visão ao desenvolvimento de software.
             </motion.p>
 
             {/* Availability pill — gently pulled toward the cursor (Magnetic) */}
@@ -155,7 +155,7 @@ export default function HistoriaIntro() {
                   style={{ background: '#2f6bff' }}
                 />
                 <span className="font-code text-xs tracking-[0.28em] uppercase text-[#6f97ff]">
-                  Aberto a estágio e vagas júnior
+                  Em busca da primeira vaga como dev júnior
                 </span>
               </motion.div>
             </Magnetic>

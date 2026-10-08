@@ -14,8 +14,6 @@ import {
   SectionTransition,
 } from '@/components/effects'
 import SkillsShowcase from '@/components/skills'
-import HeroScrollDemo from '@/components/efeito-4-container-scroll/demo'
-import ProjetosHeroScrub from '@/components/efeito-7-projetos/demo'
 import HistoriaSection from '@/components/historia'
 import HistoriaIntro from '@/components/historia/intro'
 import ExperienciaSection from '@/components/experiencia'
@@ -25,24 +23,23 @@ import { ShaderBackground } from '@/components/ui/animated-shader-hero'
 const NAV = [
   { num: '01', label: 'História', href: '#historia' },
   { num: '02', label: 'Experiência', href: '#experiencia' },
-  { num: '03', label: 'Projetos', href: '#projetos' },
-  { num: '04', label: 'Skills', href: '#skills' },
-  { num: '05', label: 'Contato', href: '#contato' },
+  { num: '03', label: 'Skills', href: '#skills' },
+  { num: '04', label: 'Contato', href: '#contato' },
 ]
 
 const STACK = [
-  'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Next.js',
-  'Node.js', 'Tailwind', 'Python', 'SQL', 'PostgreSQL', 'Power BI', 'Git',
+  'Java', 'Lógica de Programação', 'Scrum', 'Métodos Ágeis', 'TOTVS', 'TASY',
+  'RIS/PACS', 'Troubleshooting', 'Análise de Incidentes', 'Gestão de Acessos',
 ]
 
 // ── PREENCHA COM SEUS LINKS REAIS ──────────────────────────────────────────
 // Deixe '' (vazio) para esconder o item — assim nenhum link quebrado vai ao ar.
-const GITHUB_URL = 'https://github.com/Goes1404'
-const REPO_URL = 'https://github.com/Goes1404/Portifolio' // código-fonte deste site
-const LINKEDIN_URL = 'https://www.linkedin.com/in/matheus-goes-da-silva'
-const EMAIL = 'sq1matheusgsilva@gmail.com'
+const GITHUB_URL = 'https://github.com/GabyBonfim'
+const REPO_URL = 'https://github.com/GabyBonfim/Portifolio-gaby' // código-fonte deste site
+const LINKEDIN_URL = 'https://www.linkedin.com/in/gabriely-bonfim-87010a2b4'
+const EMAIL = 'gabybonfim05@gmail.com'
 // WhatsApp: número no formato internacional (55 = Brasil, 11 = São Paulo)
-const WHATSAPP_URL = 'https://wa.me/5511950085875'
+const WHATSAPP_URL = 'https://wa.me/5511964328667'
 const CV_URL = '/cv.pdf' // arquivo em public/cv.pdf
 
 gsap.registerPlugin(ScrollTrigger)
@@ -176,7 +173,7 @@ function App() {
         },
       })
       // Depth velocities: Silva exits the viewport ~5× faster than the meta line.
-      // The "Goes da" line also drifts right, as if on a different lateral plane.
+      // The "Bonfim" line also drifts right, as if on a different lateral plane.
       tl.to('[data-hero-layer="meta"]',    { y: '-90vh', ease: 'none' }, 0)
       tl.to('[data-hero-layer="line1"]',   { y: '-75vh', ease: 'none' }, 0)
       tl.to('[data-hero-layer="line2"]',   { y: '-55vh', x: '2.5vw', ease: 'none' }, 0)
@@ -222,7 +219,7 @@ function App() {
       {/* Vertical metadata rail */}
       <div className="fixed left-3 top-1/2 z-40 hidden -translate-y-1/2 lg:block">
         <span className="vertical-rl font-code text-[10px] tracking-[0.45em] text-white/30">
-          MATHEUS GOES DA SILVA &nbsp;·&nbsp; FULL&nbsp;STACK
+          GABRIELY BONFIM SILVA &nbsp;·&nbsp; FULL&nbsp;STACK
         </span>
       </div>
 
@@ -230,9 +227,9 @@ function App() {
       <header className="pt-safe sticky top-0 z-50 border-b rule bg-[#05070f]/75 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4">
           <a href="#top" onClick={(e) => handleNav(e, '#top')} className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-sm bg-brand font-display text-sm text-white">M</span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-sm bg-brand font-display text-sm text-white">G</span>
             <span className="hidden font-code text-xs tracking-[0.3em] text-[#e9edf7] sm:block">
-              MGS<span className="text-brand">_</span>STUDIO
+              GBS<span className="text-brand">_</span>STUDIO
             </span>
           </a>
 
@@ -276,7 +273,7 @@ function App() {
             {/* Top bar inside the overlay */}
             <div className="flex items-center justify-between px-5 py-3.5">
               <span className="font-code text-xs tracking-[0.3em] text-[#e9edf7]">
-                MGS<span className="text-brand">_</span>STUDIO
+                GBS<span className="text-brand">_</span>STUDIO
               </span>
               <button
                 onClick={() => setMenuOpen(false)}
@@ -322,7 +319,7 @@ function App() {
                 className="inline-flex items-center gap-2 font-code text-xs tracking-widest text-white/50"
               >
                 <MessageCircle className="h-4 w-4" />
-                WhatsApp · (11) 95008-5875
+                WhatsApp · (11) 96432-8667
               </a>
             </div>
           </motion.div>
@@ -374,7 +371,7 @@ function App() {
               <motion.div variants={rise} className="flex flex-wrap items-center gap-x-6 gap-y-2 font-code text-xs tracking-[0.3em] text-white/45">
                 <span className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand" />
-                  ABERTO A ESTÁGIO · VAGAS JÚNIOR
+                  EM BUSCA DA 1ª VAGA · DEV JÚNIOR
                 </span>
                 <span className="hidden sm:inline">·</span>
                 <span>SÃO PAULO · BR</span>
@@ -383,23 +380,23 @@ function App() {
               </motion.div>
             </div>
 
-            {/* "Matheus" — second-slowest, anchors the name visually */}
+            {/* "Gabriely" — second-slowest, anchors the name visually */}
             <div data-hero-layer="line1" className="will-change-transform">
               <motion.h1
                 variants={rise}
                 className="mt-5 font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#e9edf7]"
               >
-                Matheus
+                Gabriely
               </motion.h1>
             </div>
 
-            {/* "Goes da" — mid-speed + lateral drift, feels on a different plane */}
+            {/* "Bonfim" — mid-speed + lateral drift, feels on a different plane */}
             <div data-hero-layer="line2" className="will-change-transform">
               <motion.h1
                 variants={rise}
                 className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#e9edf7] md:ml-[16%]"
               >
-                Goes <span className="text-gradient-anim">da</span>
+                <span className="text-gradient-anim">Bonfim</span>
               </motion.h1>
             </div>
 
@@ -418,8 +415,8 @@ function App() {
             <div data-hero-layer="tagline" className="will-change-transform">
               <motion.div variants={rise} className="mt-7 flex flex-col gap-4 sm:mt-10 sm:gap-5 md:ml-auto md:max-w-md md:text-right">
                 <p className="font-editorial text-lg italic leading-snug text-white/65 sm:text-2xl md:text-3xl">
-                  Desenvolvedor Full Stack — transformo ideias em produtos
-                  digitais que as pessoas gostam de usar.
+                  Desenvolvedora Full Stack Júnior — do suporte ao código,
+                  construo sistemas pensando em quem usa.
                 </p>
                 <Magnetic strength={0.5} className="md:self-end">
                   <a
@@ -457,7 +454,7 @@ function App() {
       {/* ── 02 · EXPERIÊNCIA ─────────────────────────────────── */}
       <ExperienciaSection />
 
-      {/* ── Parceiros & Clientes ───────────────────────────────────
+      {/* ── Por onde passei ─────────────────────────────────────────
           Blob WebGL ambiente, calmado por um véu radial para o conteúdo
           ficar nítido; grão + selo na linguagem das outras seções. */}
       <section id="parceiros" className="relative overflow-hidden border-t rule bg-[#05070f] py-20 md:py-28">
@@ -488,14 +485,14 @@ function App() {
           >
             <span className="flex items-center gap-3 font-code text-[11px] uppercase tracking-[0.4em] text-white/40">
               <span className="h-px w-8 bg-brand/60" />
-              ecossistema de projetos e marcas
+              empresas e instituições
               <span className="h-px w-8 bg-brand/60" />
             </span>
-            <h3 className="mt-4 bg-gradient-to-b from-white to-white/55 bg-clip-text font-display text-3xl leading-[1.05] text-transparent sm:text-4xl md:text-5xl">
-              Parceiros &amp; Clientes
+            <h3 className="mt-4 bg-gradient-to-b from-white to-white/55 bg-clip-text pb-2 font-display text-3xl leading-[1.15] text-transparent sm:text-4xl md:text-5xl">
+              Por onde passei
             </h3>
             <p className="mt-4 max-w-md font-editorial text-lg italic leading-snug text-white/45 md:text-xl">
-              As marcas e os times com quem construí, codei e entreguei.
+              Onde trabalhei, estudei e aprendi.
             </p>
           </motion.div>
         </div>
@@ -506,25 +503,25 @@ function App() {
         </div>
       </section>
 
-      {/* ── 03 · PROJETOS ────────────────────────────────────── */}
-      {/* E4: clean scroll expand — suspense build-up before projects.
-          Carries the #projetos anchor now that the section header is gone. */}
-      <div id="projetos" className="scroll-mt-24">
-        <HeroScrollDemo />
-      </div>
-      <ProjetosHeroScrub />
+      {/* ── PROJETOS (desativado) ──────────────────────────────
+          Para mostrar projetos: preencha PROJECTS em
+          src/components/efeito-7-projetos/demo.tsx, volte a importar
+          HeroScrollDemo e ProjetosHeroScrub e renderize-os aqui:
+            <div id="projetos" className="scroll-mt-24"><HeroScrollDemo /></div>
+            <ProjetosHeroScrub />
+          (e adicione { label: 'Projetos', href: '#projetos' } em NAV). */}
 
-      {/* ── 04 · SKILLS ──────────────────────────────────────── */}
+      {/* ── 03 · SKILLS ──────────────────────────────────────── */}
       <SectionMarker
         id="skills"
-        num="04"
+        num="03"
         kicker="Stack & Ferramentas"
         title="Como eu construo"
-        lead="O ecossistema de tecnologias com que trabalho no dia a dia."
+        lead="Tecnologias, sistemas e métodos com que trabalho no dia a dia."
       />
       <SkillsShowcase />
 
-      {/* ── 05 · CONTATO ─────────────────────────────────────── */}
+      {/* ── 04 · CONTATO ─────────────────────────────────────── */}
       <footer id="contato" className="bg-grain relative overflow-hidden border-t rule px-6 py-24 scroll-mt-24 md:py-40">
         <span
           aria-hidden
@@ -541,7 +538,7 @@ function App() {
         >
           <motion.div variants={rise} className="flex items-center gap-4">
             <span className="h-px w-10 bg-brand" />
-            <span className="font-code text-xs uppercase tracking-[0.35em] text-white/50">05 — Contato</span>
+            <span className="font-code text-xs uppercase tracking-[0.35em] text-white/50">04 — Contato</span>
           </motion.div>
 
           {/* Footer heading — GSAP per-character mask reveal (SplitReveal) */}
@@ -604,7 +601,7 @@ function App() {
           )}
 
           <motion.div variants={rise} className="mt-20 flex flex-col items-start justify-between gap-3 border-t rule pt-6 font-code text-[11px] tracking-[0.25em] text-white/30 sm:flex-row sm:items-center">
-            <span>© {new Date().getFullYear()} MATHEUS GOES DA SILVA</span>
+            <span>© {new Date().getFullYear()} GABRIELY BONFIM SILVA</span>
             <a
               href={REPO_URL}
               target="_blank"

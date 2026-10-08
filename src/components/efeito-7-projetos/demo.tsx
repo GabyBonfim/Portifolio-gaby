@@ -90,7 +90,7 @@ function ExpandedProjectCard({
       {/* Container Principal Expandido com Layout Compartilhado */}
       <motion.div
         layoutId={`card-container-${project.id}`}
-        className="relative w-full max-w-4xl bg-[#1a0d14] border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh] z-10"
+        className="relative w-full max-w-4xl bg-[#f3ebe6] border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh] z-10"
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
       >
         {/* Lado Esquerdo: Imagem Cover com efeito glow dinâmico */}
@@ -103,7 +103,7 @@ function ExpandedProjectCard({
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           />
           {/* Degradê cinematográfico para fundir com o fundo preto */}
-          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#1a0d14] via-[#1a0d14]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#f3ebe6] via-[#f3ebe6]/40 to-transparent" />
           
           {/* Ambient Glow com a cor de destaque do projeto */}
           <div
@@ -133,7 +133,7 @@ function ExpandedProjectCard({
                 </motion.h3>
                 <motion.p
                   layoutId={`card-subtitle-${project.id}`}
-                  className="text-sm font-code text-[#ff8fc4] mt-1"
+                  className="text-sm font-code text-[#d9a1ae] mt-1"
                 >
                   {project.subtitle}
                 </motion.p>
@@ -188,7 +188,7 @@ function ExpandedProjectCard({
                 className="mt-6 rounded-xl border p-4"
                 style={{ borderColor: `${project.accentHex}33`, background: `${project.accentHex}0d` }}
               >
-                <div className="mb-3 flex items-center gap-2 font-code text-[10px] uppercase tracking-[0.18em] text-[#ff8fc4]">
+                <div className="mb-3 flex items-center gap-2 font-code text-[10px] uppercase tracking-[0.18em] text-[#d9a1ae]">
                   <span className="h-1.5 w-1.5 rounded-full" style={{ background: project.accentHex }} />
                   Acesso de demonstração — entre e explore
                 </div>
@@ -304,8 +304,8 @@ function ProjectCard({
     <motion.div ref={wrapRef} style={{ scale, opacity }} className="will-change-transform">
     <motion.article
       layoutId={`card-container-${project.id}`}
-      className={`group relative overflow-hidden rounded-2xl cursor-pointer bg-[#1a0d14] border ${
-        project.featured ? "border-[#ff4d9d]/40" : "border-white/[0.07]"
+      className={`group relative overflow-hidden rounded-2xl cursor-pointer bg-[#f3ebe6] border ${
+        project.featured ? "border-[#b86b7e]/40" : "border-white/[0.07]"
       }`}
       onClick={onClick}
       role="button"
@@ -322,7 +322,7 @@ function ProjectCard({
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1a0d14] via-[#1a0d14]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#f3ebe6] via-[#f3ebe6]/20 to-transparent" />
 
         {/* Selo de destaque — só nos melhores projetos */}
         {project.featured && (
@@ -348,7 +348,7 @@ function ProjectCard({
         {/* Ícone de Play centralizado */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div
-            className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1a0d14]/70 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f3ebe6]/70 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100"
           >
             <Play className="h-5 w-5 fill-white ml-0.5" />
           </div>
@@ -373,7 +373,7 @@ function ProjectCard({
             </motion.h3>
             <motion.p 
               layoutId={`card-subtitle-${project.id}`}
-              className="text-xs text-[#ff8fc4] font-code mt-0.5"
+              className="text-xs text-[#d9a1ae] font-code mt-0.5"
             >
               {project.subtitle}
             </motion.p>
@@ -438,7 +438,7 @@ function ProjectCard({
           ))}
         </motion.div>
 
-        <div className="flex items-center gap-2 text-[10px] text-white/40 group-hover:text-[#ff8fc4] transition-colors duration-300 font-code">
+        <div className="flex items-center gap-2 text-[10px] text-white/40 group-hover:text-[#d9a1ae] transition-colors duration-300 font-code">
           <Play className="h-2.5 w-2.5" />
           <span>Ver detalhes do projeto</span>
         </div>
@@ -490,7 +490,7 @@ export default function ProjetosHeroScrub() {
   };
 
   return (
-    <section className="w-full bg-[#0f070b] px-5 py-16 sm:px-6 sm:py-20">
+    <section className="w-full bg-[#faf6f2] px-5 py-16 sm:px-6 sm:py-20">
       {/* Notificador de Transição de Rota (Simulação local) */}
       <AnimatePresence>
         {fallbackProject && (
@@ -498,14 +498,14 @@ export default function ProjetosHeroScrub() {
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-6 right-6 left-6 z-[100001] bg-[#1a0d14] border border-[#ff4d9d]/40 px-6 py-4 rounded-2xl shadow-xl flex flex-col gap-1 sm:left-auto sm:max-w-sm"
+            className="fixed bottom-6 right-6 left-6 z-[100001] bg-[#f3ebe6] border border-[#b86b7e]/40 px-6 py-4 rounded-2xl shadow-xl flex flex-col gap-1 sm:left-auto sm:max-w-sm"
           >
-            <div className="flex items-center gap-2 text-[#ff8fc4] text-[10px] font-code font-bold">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#ff4d9d] animate-ping" />
+            <div className="flex items-center gap-2 text-[#d9a1ae] text-[10px] font-code font-bold">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#b86b7e] animate-ping" />
               DEMO AO VIVO EM BREVE
             </div>
             <p className="text-white text-sm font-medium mt-1">
-              O demo de <span className="font-code text-[#c77dff]">{fallbackProject}</span> ainda está sendo preparado.
+              O demo de <span className="font-code text-[#c9a99a]">{fallbackProject}</span> ainda está sendo preparado.
             </p>
             <p className="text-white/50 text-[11px] leading-normal mt-1">
               Enquanto isso, role o card aberto para ver os detalhes técnicos do projeto.
@@ -540,7 +540,7 @@ export default function ProjetosHeroScrub() {
               onAnimationComplete={endTransition}
               className="text-center px-6 z-10"
             >
-              <span className="font-code text-xs uppercase tracking-[0.45em] text-[#ff8fc4] block mb-4 animate-pulse">
+              <span className="font-code text-xs uppercase tracking-[0.45em] text-[#d9a1ae] block mb-4 animate-pulse">
                 {transitionProject.liveUrl ? "Abrindo projeto ao vivo" : "Abrindo documento do projeto"}
               </span>
               <h1 className="font-display text-4xl md:text-6xl text-white tracking-tight mb-2">
@@ -556,7 +556,7 @@ export default function ProjetosHeroScrub() {
                   initial={{ left: "-100%" }}
                   animate={{ left: "100%" }}
                   transition={{ duration: 1.2, ease: "easeInOut", repeat: Infinity }}
-                  className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-[#ff4d9d] to-transparent"
+                  className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-[#b86b7e] to-transparent"
                 />
               </div>
             </motion.div>
@@ -581,9 +581,9 @@ export default function ProjetosHeroScrub() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-2xl border border-white/[0.06] bg-[#0f070b]/80 px-5 py-5 backdrop-blur-md sm:px-7 sm:py-6"
+          className="rounded-2xl border border-white/[0.06] bg-[#faf6f2]/80 px-5 py-5 backdrop-blur-md sm:px-7 sm:py-6"
         >
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#ff4d9d]/25 bg-[#ff4d9d]/10 px-3 py-1 font-code text-[11px] text-[#ff8fc4]">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#b86b7e]/25 bg-[#b86b7e]/10 px-3 py-1 font-code text-[11px] text-[#d9a1ae]">
             <Play className="h-3 w-3 fill-none" />
             Casos selecionados
           </div>
@@ -592,7 +592,7 @@ export default function ProjetosHeroScrub() {
             style={{ fontSize: "clamp(1.35rem, 4.6vw, 2.5rem)", lineHeight: 1.06 }}
           >
             Projetos reais — de clientes{" "}
-            <span className="text-[#c77dff]">a desafios da faculdade.</span>
+            <span className="text-[#c9a99a]">a desafios da faculdade.</span>
           </h2>
         </motion.div>
       </div>
@@ -601,8 +601,8 @@ export default function ProjetosHeroScrub() {
       <div className="max-w-5xl mx-auto">
         {/* Em destaque */}
         <div className="mb-4 flex items-center gap-3">
-          <span className="h-px w-8 bg-[#ff4d9d]" />
-          <span className="font-code text-[11px] uppercase tracking-[0.3em] text-[#ff8fc4]">
+          <span className="h-px w-8 bg-[#b86b7e]" />
+          <span className="font-code text-[11px] uppercase tracking-[0.3em] text-[#d9a1ae]">
             Em destaque
           </span>
         </div>

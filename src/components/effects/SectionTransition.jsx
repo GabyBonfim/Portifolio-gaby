@@ -82,11 +82,11 @@ export default function SectionTransition() {
           className="pointer-events-none fixed inset-x-0 top-0 z-[125] flex h-[115vh] items-center justify-center"
           style={{
             background:
-              'linear-gradient(180deg, #5c0f3a 0%, #070b18 38%, #0f070b 100%)',
+              'linear-gradient(180deg, #f1e1dc 0%, #faf6f2 38%, #faf6f2 100%)',
           }}
         >
           {/* Bright leading edge — the "blade" of the wipe */}
-          <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c77dff] to-transparent" />
+          <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c9a99a] to-transparent" />
           {/* Film grain so the panel matches the site's atmosphere */}
           <span className="bg-noise absolute inset-0 opacity-[0.07] mix-blend-overlay" />
 
@@ -97,11 +97,11 @@ export default function SectionTransition() {
             transition={{ duration: 0.92, ease: 'easeInOut', times: [0, 0.32, 0.62, 1] }}
             className="flex flex-col items-center gap-3 text-center"
           >
-            <span className="font-code text-xs uppercase tracking-[0.5em] text-[#ff8fc4]">
+            <span className="font-code text-xs uppercase tracking-[0.5em] text-[#b86b7e]">
               {trigger.num}
             </span>
             <span
-              className="font-display leading-none text-[#fbeef4]"
+              className="font-display leading-none text-[#3b2f2f]"
               style={{ fontSize: 'clamp(2rem, 7vw, 4.5rem)' }}
             >
               {trigger.label}

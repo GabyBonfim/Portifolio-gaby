@@ -14,32 +14,32 @@ const GROUPS: Group[] = [
   {
     label: 'Desenvolvimento',
     skills: [
-      { name: 'Java', color: '#ff8fc4' },
-      { name: 'Lógica de Programação', color: '#c77dff' },
+      { name: 'Java', color: '#c0727f' },
+      { name: 'Lógica de Programação', color: '#a8826f' },
     ],
   },
   {
     label: 'Sistemas corporativos',
     skills: [
-      { name: 'TOTVS', color: '#f9a8d4' },
-      { name: 'TASY (Java e HTML5)', color: '#e879f9' },
-      { name: 'RIS/PACS', color: '#fda4af' },
+      { name: 'TOTVS', color: '#c0727f' },
+      { name: 'TASY (Java e HTML5)', color: '#8e5a78' },
+      { name: 'RIS/PACS', color: '#a8826f' },
     ],
   },
   {
     label: 'Suporte & Infra',
     skills: [
-      { name: 'Troubleshooting', color: '#fdba74' },
-      { name: 'Análise de Incidentes', color: '#ff4d9d' },
-      { name: 'Gestão de Acessos', color: '#d8b4fe' },
-      { name: 'Suporte a Hardware e Software', color: '#f0abfc' },
+      { name: 'Troubleshooting', color: '#b07a6a' },
+      { name: 'Análise de Incidentes', color: '#b86b7e' },
+      { name: 'Gestão de Acessos', color: '#9c6b8a' },
+      { name: 'Suporte a Hardware e Software', color: '#8a7266' },
     ],
   },
   {
     label: 'Metodologias',
     skills: [
-      { name: 'Scrum', color: '#fb7185' },
-      { name: 'Métodos Ágeis', color: '#c4b5fd' },
+      { name: 'Scrum', color: '#c0727f' },
+      { name: 'Métodos Ágeis', color: '#8e5a78' },
     ],
   },
   {
@@ -93,7 +93,7 @@ function Chip({ name, color }: Skill) {
       <motion.span
         variants={item}
         whileHover={{ y: -4, scale: 1.04 }}
-        className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.03] px-4 py-2.5 font-code text-sm tracking-wide text-white/70"
+        className="inline-flex items-center rounded-full border border-ink/15 bg-ink/[0.03] px-4 py-2.5 font-code text-sm tracking-wide text-ink/70"
       >
         {name}
       </motion.span>
@@ -120,17 +120,17 @@ function Chip({ name, color }: Skill) {
 export default function SkillsShowcase() {
   const reduce = useReducedMotion()
   return (
-    <section className="relative overflow-hidden bg-[#0f070b] px-6 pb-28 pt-2 md:pb-36">
+    <section className="relative overflow-hidden bg-[#faf6f2] px-6 pb-28 pt-2 md:pb-36">
       {/* colorful ambient glows */}
       <div
         aria-hidden
         className="pointer-events-none absolute -left-32 top-6 h-80 w-80 rounded-full opacity-[0.13] blur-3xl"
-        style={{ background: 'radial-gradient(circle, #ff4d9d, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, #b86b7e, transparent 70%)' }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute -right-24 bottom-8 h-80 w-80 rounded-full opacity-[0.12] blur-3xl"
-        style={{ background: 'radial-gradient(circle, #c77dff, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, #c9a99a, transparent 70%)' }}
       />
 
       <motion.div
@@ -144,9 +144,9 @@ export default function SkillsShowcase() {
           <motion.div
             key={g.label}
             variants={item}
-            className={`w-full ${gi === 0 ? '' : 'mt-7'} ${g.muted ? 'mt-10 border-t border-white/[0.06] pt-10' : ''}`}
+            className={`w-full ${gi === 0 ? '' : 'mt-7'} ${g.muted ? 'mt-10 border-t border-ink/[0.06] pt-10' : ''}`}
           >
-            <span className="font-code text-[11px] uppercase tracking-[0.32em] text-white/40">{g.label}</span>
+            <span className="font-code text-[11px] uppercase tracking-[0.32em] text-ink/40">{g.label}</span>
           </motion.div>,
           ...g.skills.map((s) => <Chip key={`${g.label}-${s.name}`} {...s} />),
         ])}

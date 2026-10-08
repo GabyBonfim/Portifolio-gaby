@@ -200,13 +200,13 @@ export default function OrbitCarousel() {
               stiffness: 300,
               damping: 25
             }}
-            className={`z-10 bg-white/[0.025] backdrop-blur-md shadow-2xl rounded-xl p-3 sm:p-4 ${cardWidth} text-center border border-white/[0.07]`}
+            className={`z-10 bg-ink/[0.025] backdrop-blur-md shadow-2xl rounded-xl p-3 sm:p-4 ${cardWidth} text-center border border-ink/[0.07]`}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className={`${avatarSize} ${avatarMargin} mx-auto flex items-center justify-center overflow-hidden rounded-full bg-white p-2.5 ring-4 ring-[#1a0d14] shadow-xl`}
+              className={`${avatarSize} ${avatarMargin} mx-auto flex items-center justify-center overflow-hidden rounded-full bg-white p-2.5 ring-4 ring-[#f3ebe6] shadow-xl`}
             >
               <img
                 src={companies[activeIndex].profile}
@@ -221,14 +221,14 @@ export default function OrbitCarousel() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.15 }}
             >
-              <h2 className={`mt-3 font-display text-[#fbeef4] ${fontSize.name}`}>
+              <h2 className={`mt-3 font-display text-[#3b2f2f] ${fontSize.name}`}>
                 {companies[activeIndex].name}
               </h2>
-              <div className={`flex items-center justify-center text-white/50 mt-1 font-code ${fontSize.role}`}>
+              <div className={`flex items-center justify-center text-ink/50 mt-1 font-code ${fontSize.role}`}>
                 <Briefcase size={12} className="mr-1.5 shrink-0" />
                 <span className="truncate">{companies[activeIndex].role}</span>
               </div>
-              <p className="text-white/60 mt-3 font-editorial text-xs sm:text-sm italic leading-snug px-1">
+              <p className="text-ink/60 mt-3 font-editorial text-xs sm:text-sm italic leading-snug px-1">
                 "{companies[activeIndex].desc}"
               </p>
             </motion.div>
@@ -241,17 +241,17 @@ export default function OrbitCarousel() {
               <button
                 onClick={prev}
                 aria-label="Empresa anterior"
-                className="cta-press flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/75 transition-colors hover:bg-white/10 hover:text-white"
+                className="cta-press flex h-8 w-8 items-center justify-center rounded-full border border-ink/10 bg-ink/5 text-ink/75 transition-colors hover:bg-ink/10 hover:text-ink"
               >
                 <ChevronLeft size={15} />
               </button>
-              <span className="min-w-[3.25rem] text-center font-code text-[11px] tracking-[0.2em] text-white/45 tabular-nums">
+              <span className="min-w-[3.25rem] text-center font-code text-[11px] tracking-[0.2em] text-ink/45 tabular-nums">
                 {String(activeIndex + 1).padStart(2, "0")} / {String(companies.length).padStart(2, "0")}
               </span>
               <button
                 onClick={next}
                 aria-label="Próxima empresa"
-                className="cta-press flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/75 transition-colors hover:bg-white/10 hover:text-white"
+                className="cta-press flex h-8 w-8 items-center justify-center rounded-full border border-ink/10 bg-ink/5 text-ink/75 transition-colors hover:bg-ink/10 hover:text-ink"
               >
                 <ChevronRight size={15} />
               </button>
@@ -302,13 +302,13 @@ export default function OrbitCarousel() {
                   onClick={() => handleProfileClick(i)}
                   whileHover={{
                     scale: 1.12,
-                    boxShadow: "0 14px 32px -6px rgba(255,77,157,0.4)",
+                    boxShadow: "0 14px 32px -6px rgba(184,107,126,0.4)",
                   }}
                   whileTap={{ scale: 0.95 }}
                   className={`flex h-full w-full cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white p-2.5 shadow-lg ring-1 transition-colors duration-300 ${
                     isActive
-                      ? "ring-2 ring-[#ff4d9d]"
-                      : "ring-white/15 hover:ring-[#ff4d9d]/60"
+                      ? "ring-2 ring-[#b86b7e]"
+                      : "ring-ink/15 hover:ring-[#b86b7e]/60"
                   }`}
                 >
                   <img
@@ -333,8 +333,8 @@ export default function OrbitCarousel() {
             onClick={() => setActiveIndex(index)}
             className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-colors ${
               index === activeIndex 
-                ? "bg-[#ff4d9d]" 
-                : "bg-white/20"
+                ? "bg-[#b86b7e]" 
+                : "bg-ink/20"
             }`}
             whileHover={{ scale: 1.3 }}
             whileTap={{ scale: 0.9 }}

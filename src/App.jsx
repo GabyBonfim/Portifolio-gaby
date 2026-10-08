@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, Suspense, lazy } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, AnimatePresence } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -6,7 +6,6 @@ import Lenis from '@studio-freight/lenis'
 import { ArrowDown, ArrowUpRight, Code2, Globe, Mail, MessageCircle, Menu, X } from 'lucide-react'
 import {
   CustomCursor,
-  ParticleField,
   Magnetic,
   SplitReveal,
   ScrollVelocity,
@@ -18,7 +17,6 @@ import HistoriaSection from '@/components/historia'
 import HistoriaIntro from '@/components/historia/intro'
 import ExperienciaSection from '@/components/experiencia'
 import OrbitCarousel from '@/components/ui/orbiting-carousel-with-animated-icons'
-import { ShaderBackground } from '@/components/ui/animated-shader-hero'
 
 const NAV = [
   { num: '01', label: 'História', href: '#historia' },
@@ -44,7 +42,6 @@ const CV_URL = '/cv.pdf' // arquivo em public/cv.pdf
 
 gsap.registerPlugin(ScrollTrigger)
 
-const WebGLHero = lazy(() => import('@/components/webgl-hero'))
 
 const stagger = {
   hidden: {},
@@ -81,7 +78,7 @@ function Marquee() {
     <div className="marquee-mask relative w-full overflow-hidden border-y rule py-4">
       <div className="animate-marquee flex w-max items-center gap-8 whitespace-nowrap">
         {row.map((tech, i) => (
-          <span key={i} className="flex items-center gap-8 font-code text-sm tracking-wide text-white/40">
+          <span key={i} className="flex items-center gap-8 font-code text-sm tracking-wide text-ink/40">
             {tech}
             <span className="text-brand">/</span>
           </span>
@@ -94,10 +91,10 @@ function Marquee() {
 // Magazine-style section header — title splits into words, each surges in independently.
 function SectionMarker({ id, num, kicker, title, lead }) {
   return (
-    <div id={id} className="relative scroll-mt-24 overflow-hidden border-t rule bg-[#0f070b] px-6 py-20 md:py-32">
+    <div id={id} className="relative scroll-mt-24 overflow-hidden border-t rule bg-[#faf6f2] px-6 py-20 md:py-32">
       <span
         aria-hidden
-        className="pointer-events-none absolute -right-4 -top-10 select-none font-display text-[34vw] leading-none text-white/[0.035] md:text-[22vw]"
+        className="pointer-events-none absolute -right-4 -top-10 select-none font-display text-[34vw] leading-none text-ink/[0.035] md:text-[22vw]"
       >
         {num}
       </span>
@@ -110,13 +107,13 @@ function SectionMarker({ id, num, kicker, title, lead }) {
       >
         <motion.div variants={rise} className="flex items-center gap-4">
           <span className="h-px w-10 bg-brand" />
-          <span className="font-code text-xs uppercase tracking-[0.35em] text-white/50">{kicker}</span>
+          <span className="font-code text-xs uppercase tracking-[0.35em] text-ink/50">{kicker}</span>
         </motion.div>
 
         {/* Each word surges up on its own — staggered by wordStagger */}
         <motion.h2
           variants={wordStagger}
-          className="mt-7 font-display text-[12vw] leading-none text-[#fbeef4] sm:text-6xl md:text-7xl"
+          className="mt-7 font-display text-[12vw] leading-none text-[#3b2f2f] sm:text-6xl md:text-7xl"
           aria-label={title}
         >
           {title.split(' ').map((word, i) => (
@@ -127,7 +124,7 @@ function SectionMarker({ id, num, kicker, title, lead }) {
         </motion.h2>
 
         {lead && (
-          <motion.p variants={rise} className="mt-7 max-w-xl font-editorial text-2xl italic leading-snug text-white/55 md:text-3xl">
+          <motion.p variants={rise} className="mt-7 max-w-xl font-editorial text-2xl italic leading-snug text-ink/55 md:text-3xl">
             {lead}
           </motion.p>
         )}
@@ -200,7 +197,7 @@ function App() {
   }, [menuOpen])
 
   return (
-    <div className="relative min-h-screen bg-[#0f070b] text-[#fbeef4] selection:bg-[#ff4d9d] selection:text-white">
+    <div className="relative min-h-screen bg-[#faf6f2] text-[#3b2f2f] selection:bg-[#b86b7e] selection:text-white">
       {/* Custom magnetic cursor (desktop / fine-pointer only) */}
       <CustomCursor />
 
@@ -210,7 +207,7 @@ function App() {
       {/* Scroll-progress thread */}
       <motion.div
         style={{ scaleX: scrollYProgress }}
-        className="fixed left-0 top-0 z-[110] h-0.5 w-full origin-left bg-gradient-to-r from-[#ff4d9d] via-[#ff8fc4] to-[#c77dff]"
+        className="fixed left-0 top-0 z-[110] h-0.5 w-full origin-left bg-gradient-to-r from-[#b86b7e] via-[#d9a1ae] to-[#c9a99a]"
       />
 
       {/* Film-grain overlay */}
@@ -218,17 +215,17 @@ function App() {
 
       {/* Vertical metadata rail */}
       <div className="fixed left-3 top-1/2 z-40 hidden -translate-y-1/2 lg:block">
-        <span className="vertical-rl font-code text-[10px] tracking-[0.45em] text-white/30">
+        <span className="vertical-rl font-code text-[10px] tracking-[0.45em] text-ink/30">
           GABRIELY BONFIM SILVA &nbsp;·&nbsp; FULL&nbsp;STACK
         </span>
       </div>
 
       {/* Header */}
-      <header className="pt-safe sticky top-0 z-50 border-b rule bg-[#0f070b]/75 backdrop-blur-md">
+      <header className="pt-safe sticky top-0 z-50 border-b rule bg-[#faf6f2]/75 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4">
           <a href="#top" onClick={(e) => handleNav(e, '#top')} className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-sm bg-brand font-display text-sm text-white">G</span>
-            <span className="hidden font-code text-xs tracking-[0.3em] text-[#fbeef4] sm:block">
+            <span className="flex h-9 w-9 items-center justify-center rounded-sm bg-brand font-display text-lg text-white">G</span>
+            <span className="hidden font-code text-xs tracking-[0.3em] text-[#3b2f2f] sm:block">
               GBS<span className="text-brand">_</span>STUDIO
             </span>
           </a>
@@ -240,7 +237,7 @@ function App() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNav(e, item.href)}
-                className="group flex items-baseline gap-1.5 px-2 py-1.5 font-code text-sm text-white/55 transition-colors hover:text-[#fbeef4]"
+                className="group flex items-baseline gap-1.5 px-2 py-1.5 font-code text-sm text-ink/55 transition-colors hover:text-[#3b2f2f]"
               >
                 <span className="text-[10px] text-brand">{item.num}</span>
                 <span className="link-underline">{item.label}</span>
@@ -253,7 +250,7 @@ function App() {
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menu"
             aria-expanded={menuOpen}
-            className="flex h-11 w-11 items-center justify-center rounded-full text-[#fbeef4] transition-colors hover:bg-white/5 sm:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-[#3b2f2f] transition-colors hover:bg-ink/5 sm:hidden"
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -268,17 +265,17 @@ function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="pt-safe fixed inset-0 z-[120] flex flex-col bg-[#0f070b]/97 backdrop-blur-xl sm:hidden"
+            className="pt-safe fixed inset-0 z-[120] flex flex-col bg-[#faf6f2]/97 backdrop-blur-xl sm:hidden"
           >
             {/* Top bar inside the overlay */}
             <div className="flex items-center justify-between px-5 py-3.5">
-              <span className="font-code text-xs tracking-[0.3em] text-[#fbeef4]">
+              <span className="font-code text-xs tracking-[0.3em] text-[#3b2f2f]">
                 GBS<span className="text-brand">_</span>STUDIO
               </span>
               <button
                 onClick={() => setMenuOpen(false)}
                 aria-label="Fechar menu"
-                className="flex h-11 w-11 items-center justify-center rounded-full text-[#fbeef4] transition-colors hover:bg-white/5"
+                className="flex h-11 w-11 items-center justify-center rounded-full text-[#3b2f2f] transition-colors hover:bg-ink/5"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -296,10 +293,10 @@ function App() {
                   className="group flex items-center gap-4 border-b rule py-4"
                 >
                   <span className="font-code text-xs text-brand">{item.num}</span>
-                  <span className="font-display leading-none text-[#fbeef4] transition-colors group-hover:text-brand" style={{ fontSize: 'clamp(1.75rem, 7vw, 2.5rem)' }}>
+                  <span className="font-display leading-none text-[#3b2f2f] transition-colors group-hover:text-brand" style={{ fontSize: 'clamp(1.75rem, 7vw, 2.5rem)' }}>
                     {item.label}
                   </span>
-                  <ArrowUpRight className="ml-auto h-5 w-5 shrink-0 text-white/30 transition-colors group-hover:text-brand" />
+                  <ArrowUpRight className="ml-auto h-5 w-5 shrink-0 text-ink/30 transition-colors group-hover:text-brand" />
                 </motion.a>
               ))}
             </nav>
@@ -308,7 +305,7 @@ function App() {
             <div className="flex flex-col gap-3 px-7 pb-[calc(env(safe-area-inset-bottom)_+_2rem)]">
               <a
                 href={`mailto:${EMAIL}`}
-                className="font-code text-xs tracking-widest text-white/50"
+                className="font-code text-xs tracking-widest text-ink/50"
               >
                 {EMAIL}
               </a>
@@ -316,7 +313,7 @@ function App() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-code text-xs tracking-widest text-white/50"
+                className="inline-flex items-center gap-2 font-code text-xs tracking-widest text-ink/50"
               >
                 <MessageCircle className="h-4 w-4" />
                 WhatsApp · (11) 96432-8667
@@ -333,19 +330,21 @@ function App() {
       <main
         id="top"
         ref={heroTrackRef}
-        className="relative bg-grain bg-[#0f070b]"
+        className="relative bg-grain bg-[#faf6f2]"
         style={{ height: '280vh' }}
       >
         {/* Sticky viewport — pinned, always fills the screen */}
         <div className="sticky top-0 h-screen overflow-hidden">
 
-          {/* WebGL animated shader background layer (z-0) */}
-          <ShaderBackground className="pointer-events-none absolute inset-0 z-0" />
-
-          {/* Interactive particle constellation (z-[1]) — drifts, links nearby
-              nodes and is repelled by the pointer (light physics). Sits below the
-              readability veil so it never cuts contrast under the headline. */}
-          <ParticleField className="pointer-events-none absolute inset-0 z-[1]" />
+          {/* Soft blush wash — clean, airy background (z-0) */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 z-0"
+            style={{
+              background:
+                'radial-gradient(60% 55% at 78% 30%, rgba(242,212,217,0.75) 0%, rgba(242,212,217,0) 70%), radial-gradient(50% 50% at 15% 85%, rgba(234,217,205,0.7) 0%, rgba(234,217,205,0) 70%)',
+            }}
+          />
 
           {/* Readability veil (z-2) — also fades via GSAP as you scroll in */}
           <div
@@ -354,7 +353,7 @@ function App() {
             className="pointer-events-none absolute inset-0 z-[2]"
             style={{
               background:
-                'radial-gradient(130% 120% at 28% 42%, rgba(15,7,11,0.88) 0%, rgba(15,7,11,0.4) 48%, rgba(15,7,11,0) 72%)',
+                'radial-gradient(130% 120% at 28% 42%, rgba(250,246,242,0.88) 0%, rgba(250,246,242,0.4) 48%, rgba(250,246,242,0) 72%)',
             }}
           />
 
@@ -368,7 +367,7 @@ function App() {
           >
             {/* Status meta line — slowest layer */}
             <div data-hero-layer="meta" className="will-change-transform">
-              <motion.div variants={rise} className="flex flex-wrap items-center gap-x-6 gap-y-2 font-code text-xs tracking-[0.3em] text-white/45">
+              <motion.div variants={rise} className="flex flex-wrap items-center gap-x-6 gap-y-2 font-code text-xs tracking-[0.3em] text-ink/45">
                 <span className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand" />
                   EM BUSCA DA 1ª VAGA · DEV JÚNIOR
@@ -384,7 +383,7 @@ function App() {
             <div data-hero-layer="line1" className="will-change-transform">
               <motion.h1
                 variants={rise}
-                className="mt-5 font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#fbeef4]"
+                className="mt-5 font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#3b2f2f]"
               >
                 Gabriely
               </motion.h1>
@@ -394,7 +393,7 @@ function App() {
             <div data-hero-layer="line2" className="will-change-transform">
               <motion.h1
                 variants={rise}
-                className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#fbeef4] md:ml-[16%]"
+                className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#3b2f2f] md:ml-[16%]"
               >
                 <span className="text-gradient-anim">Bonfim</span>
               </motion.h1>
@@ -404,7 +403,7 @@ function App() {
             <div data-hero-layer="line3" className="will-change-transform">
               <motion.h1
                 variants={rise}
-                className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#fbeef4] md:ml-[5%]"
+                className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#3b2f2f] md:ml-[5%]"
               >
                 {/* Hover to ripple the type with an SVG liquid-distortion filter */}
                 <LiquidText data-cursor="liquid">Silva</LiquidText>
@@ -414,7 +413,7 @@ function App() {
             {/* Tagline — sits at a mid-depth between meta and name */}
             <div data-hero-layer="tagline" className="will-change-transform">
               <motion.div variants={rise} className="mt-7 flex flex-col gap-4 sm:mt-10 sm:gap-5 md:ml-auto md:max-w-md md:text-right">
-                <p className="font-editorial text-lg italic leading-snug text-white/65 sm:text-2xl md:text-3xl">
+                <p className="font-editorial text-lg italic leading-snug text-ink/65 sm:text-2xl md:text-3xl">
                   Desenvolvedora Full Stack Júnior — do suporte ao código,
                   construo sistemas pensando em quem usa.
                 </p>
@@ -441,7 +440,7 @@ function App() {
             </ScrollVelocity>
           </div>
           {/* Bottom-edge fade — blends the hero into the next section */}
-          <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 z-[19] bg-gradient-to-t from-[#0f070b] to-transparent" />
+          <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 z-[19] bg-gradient-to-t from-[#faf6f2] to-transparent" />
         </div>
       </main>
 
@@ -457,10 +456,12 @@ function App() {
       {/* ── Por onde passei ─────────────────────────────────────────
           Blob WebGL ambiente, calmado por um véu radial para o conteúdo
           ficar nítido; grão + selo na linguagem das outras seções. */}
-      <section id="parceiros" className="relative overflow-hidden border-t rule bg-[#0f070b] py-20 md:py-28">
-        <Suspense fallback={null}>
-          <WebGLHero className="pointer-events-none absolute inset-0 z-0 opacity-40" />
-        </Suspense>
+      <section id="parceiros" className="relative overflow-hidden border-t rule bg-[#faf6f2] py-20 md:py-28">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{ background: 'radial-gradient(55% 60% at 50% 55%, rgba(242,212,217,0.65) 0%, rgba(242,212,217,0) 72%)' }}
+        />
 
         {/* Readability veil — calms the blob behind the heading + orbit */}
         <div
@@ -468,7 +469,7 @@ function App() {
           className="pointer-events-none absolute inset-0 z-[1]"
           style={{
             background:
-              'radial-gradient(78% 62% at 50% 44%, rgba(15,7,11,0.84) 0%, rgba(15,7,11,0.38) 56%, rgba(15,7,11,0) 82%)',
+              'radial-gradient(78% 62% at 50% 44%, rgba(250,246,242,0.84) 0%, rgba(250,246,242,0.38) 56%, rgba(250,246,242,0) 82%)',
           }}
         />
         {/* Film grain for cohesion with the rest of the site */}
@@ -483,15 +484,15 @@ function App() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center"
           >
-            <span className="flex items-center gap-3 font-code text-[11px] uppercase tracking-[0.4em] text-white/40">
+            <span className="flex items-center gap-3 font-code text-[11px] uppercase tracking-[0.4em] text-ink/40">
               <span className="h-px w-8 bg-brand/60" />
               empresas e instituições
               <span className="h-px w-8 bg-brand/60" />
             </span>
-            <h3 className="mt-4 bg-gradient-to-b from-white to-white/55 bg-clip-text pb-2 font-display text-3xl leading-[1.15] text-transparent sm:text-4xl md:text-5xl">
+            <h3 className="mt-4 pb-2 font-display text-3xl leading-[1.15] text-ink sm:text-4xl md:text-5xl">
               Por onde passei
             </h3>
-            <p className="mt-4 max-w-md font-editorial text-lg italic leading-snug text-white/45 md:text-xl">
+            <p className="mt-4 max-w-md font-editorial text-lg italic leading-snug text-ink/45 md:text-xl">
               Onde trabalhei, estudei e aprendi.
             </p>
           </motion.div>
@@ -525,7 +526,7 @@ function App() {
       <footer id="contato" className="bg-grain relative overflow-hidden border-t rule px-6 py-24 scroll-mt-24 md:py-40">
         <span
           aria-hidden
-          className="pointer-events-none absolute -left-4 bottom-0 select-none font-display text-[30vw] leading-none text-white/[0.03] md:text-[18vw]"
+          className="pointer-events-none absolute -left-4 bottom-0 select-none font-display text-[30vw] leading-none text-ink/[0.03] md:text-[18vw]"
         >
           OLÁ
         </span>
@@ -538,12 +539,12 @@ function App() {
         >
           <motion.div variants={rise} className="flex items-center gap-4">
             <span className="h-px w-10 bg-brand" />
-            <span className="font-code text-xs uppercase tracking-[0.35em] text-white/50">04 — Contato</span>
+            <span className="font-code text-xs uppercase tracking-[0.35em] text-ink/50">04 — Contato</span>
           </motion.div>
 
           {/* Footer heading — GSAP per-character mask reveal (SplitReveal) */}
           <h2
-            className="mt-8 font-display text-[13vw] leading-none text-[#fbeef4] sm:text-6xl md:text-8xl"
+            className="mt-8 font-display text-[13vw] leading-none text-[#3b2f2f] sm:text-6xl md:text-8xl"
             aria-label="Vamos construir algo juntos?"
           >
             <SplitReveal as="span" className="block">Vamos construir</SplitReveal>
@@ -555,7 +556,7 @@ function App() {
               <a
                 href={`mailto:${EMAIL}`}
                 data-cursor="escrever"
-                className="group inline-flex max-w-full items-center gap-2 border-b-2 border-[#ff4d9d] pb-2 font-editorial text-lg italic text-[#fbeef4] transition-colors hover:text-brand sm:gap-3 sm:text-2xl md:text-4xl"
+                className="group inline-flex max-w-full items-center gap-2 border-b-2 border-[#b86b7e] pb-2 font-editorial text-lg italic text-[#3b2f2f] transition-colors hover:text-brand sm:gap-3 sm:text-2xl md:text-4xl"
               >
                 <LiquidText as="span" className="break-words">{EMAIL}</LiquidText>
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-brand transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 sm:h-6 sm:w-6" />
@@ -574,7 +575,7 @@ function App() {
                     href={href}
                     aria-label={label}
                     data-cursor={label}
-                    className="icon-fill cta-press flex h-12 w-12 items-center justify-center rounded-full border rule text-white/60 transition-colors hover:border-[#ff4d9d] hover:text-white"
+                    className="icon-fill cta-press flex h-12 w-12 items-center justify-center rounded-full border rule text-ink/60 transition-colors hover:border-[#b86b7e] hover:text-ink"
                   >
                     <Icon className="h-5 w-5" />
                   </a>
@@ -591,7 +592,7 @@ function App() {
                   href={CV_URL}
                   download
                   data-cursor="baixar"
-                  className="group cta-sheen cta-press inline-flex items-center gap-2.5 rounded-full border border-[#ff4d9d]/40 bg-[#ff4d9d]/10 px-6 py-3.5 font-code text-xs tracking-[0.2em] text-[#ff8fc4] transition-colors hover:bg-[#ff4d9d]/20 hover:text-white"
+                  className="group cta-sheen cta-press inline-flex items-center gap-2.5 rounded-full border border-[#b86b7e]/40 bg-[#b86b7e]/10 px-6 py-3.5 font-code text-xs tracking-[0.2em] text-[#b86b7e] transition-colors hover:bg-[#b86b7e]/20 hover:text-ink"
                 >
                   BAIXAR CV (PDF)
                   <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
@@ -600,7 +601,7 @@ function App() {
             </motion.div>
           )}
 
-          <motion.div variants={rise} className="mt-20 flex flex-col items-start justify-between gap-3 border-t rule pt-6 font-code text-[11px] tracking-[0.25em] text-white/30 sm:flex-row sm:items-center">
+          <motion.div variants={rise} className="mt-20 flex flex-col items-start justify-between gap-3 border-t rule pt-6 font-code text-[11px] tracking-[0.25em] text-ink/30 sm:flex-row sm:items-center">
             <span>© {new Date().getFullYear()} GABRIELY BONFIM SILVA</span>
             <a
               href={REPO_URL}

@@ -156,9 +156,9 @@ export default function WebGLHero({ className = '', posterSrc }) {
       uFreq: { value: 0.9 },
       uScroll: { value: 0 },
       uMouse: { value: new THREE.Vector2(0, 0) },
-      uColorA: { value: new THREE.Color('#3d0a26') },
-      uColorB: { value: new THREE.Color('#ff4d9d') },
-      uColorC: { value: new THREE.Color('#c77dff') },
+      uColorA: { value: new THREE.Color('#ead9d3') },
+      uColorB: { value: new THREE.Color('#b86b7e') },
+      uColorC: { value: new THREE.Color('#c9a99a') },
     }
 
     const geometry = new THREE.IcosahedronGeometry(1.35, 18)
@@ -262,7 +262,7 @@ export default function WebGLHero({ className = '', posterSrc }) {
             ? { backgroundImage: `url(${posterSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }
             : {
                 background:
-                  'radial-gradient(58% 58% at 42% 44%, rgba(255,77,157,0.30) 0%, rgba(61,10,38,0.20) 38%, rgba(15,7,11,0) 70%)',
+                  'radial-gradient(58% 58% at 42% 44%, rgba(184,107,126,0.30) 0%, rgba(234,217,211,0.20) 38%, rgba(250,246,242,0) 70%)',
               }
         }
       />

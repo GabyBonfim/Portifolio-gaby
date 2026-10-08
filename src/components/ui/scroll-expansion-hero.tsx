@@ -165,8 +165,8 @@ export default function ScrollExpandMedia({
   const bgOpacity   = useTransform(p, [0, 1], [1, 0]);
   const veilOpacity = useTransform(p, [0, 1], [0.6, 0.1]);
   const boxShadow   = useTransform(p, [0, 1], [
-    '0 0 20px rgba(255,77,157,0.12)',
-    '0 0 100px rgba(255,77,157,0.32)',
+    '0 0 20px rgba(184,107,126,0.12)',
+    '0 0 100px rgba(184,107,126,0.32)',
   ]);
   // Text slides: both values in vw (same unit = smooth interpolation).
   const xLeft       = useTransform(p, [0, 1], ['0vw', '-160vw']);
@@ -191,7 +191,7 @@ export default function ScrollExpandMedia({
   return (
     // No overflow-x here — that breaks position:sticky in Chromium.
     // The sticky inner div has overflow:hidden which handles clipping.
-    <div ref={trackRef} className="relative bg-[#0f070b]" style={{ height: '480vh' }}>
+    <div ref={trackRef} className="relative bg-[#faf6f2]" style={{ height: '480vh' }}>
 
       {/* ── Pinned viewport ─────────────────────────────────── */}
       <div className="sticky top-0 h-screen overflow-hidden">
@@ -215,7 +215,7 @@ export default function ScrollExpandMedia({
             className="absolute inset-0"
             style={{
               background:
-                'radial-gradient(60% 55% at 50% 45%, rgba(255,77,157,0.30) 0%, rgba(199,125,255,0.10) 35%, transparent 70%)',
+                'radial-gradient(60% 55% at 50% 45%, rgba(184,107,126,0.30) 0%, rgba(201,169,154,0.10) 35%, transparent 70%)',
             }}
           />
           {/* Vignette + base tint to keep the centred text legible */}
@@ -224,10 +224,10 @@ export default function ScrollExpandMedia({
             className="absolute inset-0"
             style={{
               background:
-                'radial-gradient(120% 120% at 50% 50%, transparent 35%, rgba(15,7,11,0.85) 100%)',
+                'radial-gradient(120% 120% at 50% 50%, transparent 35%, rgba(250,246,242,0.85) 100%)',
             }}
           />
-          <div className="absolute inset-0 bg-[#0f070b]/35" />
+          <div className="absolute inset-0 bg-[#faf6f2]/35" />
         </motion.div>
 
         {/* Expanding media card — centred via flexbox so the parallax-exit
@@ -263,7 +263,7 @@ export default function ScrollExpandMedia({
             <img src={mediaSrc} alt={title ?? ''} className="h-full w-full object-cover" />
           )}
           {/* Overlay clears as the card grows to reveal the media */}
-          <motion.div className="absolute inset-0 bg-[#0f070b]" style={{ opacity: veilOpacity }} />
+          <motion.div className="absolute inset-0 bg-[#faf6f2]" style={{ opacity: veilOpacity }} />
         </motion.div>
         </div>
 
@@ -289,7 +289,7 @@ export default function ScrollExpandMedia({
             {topLine && (
               <motion.span
                 style={{ x: xLeft }}
-                className="block text-[#fbeef4]"
+                className="block text-[#3b2f2f]"
               >
                 {topLine}
               </motion.span>
@@ -297,7 +297,7 @@ export default function ScrollExpandMedia({
             {bottomLine && (
               <motion.span
                 style={{ x: xRight }}
-                className="block bg-gradient-to-r from-[#ff4d9d] via-[#ff8fc4] to-[#c77dff] bg-clip-text text-transparent"
+                className="block bg-gradient-to-r from-[#b86b7e] via-[#d9a1ae] to-[#c9a99a] bg-clip-text text-transparent"
               >
                 {bottomLine}
               </motion.span>
@@ -307,9 +307,9 @@ export default function ScrollExpandMedia({
           {scrollToExpand && (
             <motion.p
               style={{ x: xRight }}
-              className="mt-7 flex items-center gap-2 font-code text-[10px] uppercase tracking-[0.32em] text-[#ff8fc4]"
+              className="mt-7 flex items-center gap-2 font-code text-[10px] uppercase tracking-[0.32em] text-[#d9a1ae]"
             >
-              <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[#c77dff]" />
+              <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[#c9a99a]" />
               {scrollToExpand}
             </motion.p>
           )}
@@ -320,7 +320,7 @@ export default function ScrollExpandMedia({
       {children && (
         <motion.div
           style={{ opacity: contentAlpha }}
-          className="relative z-30 bg-[#0f070b] px-8 py-20 md:px-16"
+          className="relative z-30 bg-[#faf6f2] px-8 py-20 md:px-16"
         >
           {children}
         </motion.div>

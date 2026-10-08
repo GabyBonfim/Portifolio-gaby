@@ -15,7 +15,7 @@ export default function ParticleField({
   maxParticles = 140,
   linkDist = 130,      // px below which two nodes draw a link
   pointerRadius = 150, // px radius of pointer repulsion
-  color = '255, 77, 157', // rgb of the line/dot color
+  color = '184, 107, 126', // rgb of the line/dot color
 }) {
   const canvasRef = useRef(null)
 

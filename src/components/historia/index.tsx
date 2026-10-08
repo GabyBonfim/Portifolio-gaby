@@ -25,7 +25,7 @@ const CHAPTERS = [
     kicker: '// os primeiros códigos na ETEC',
     body: 'Comecei no Ensino Médio Integrado ao Técnico em Desenvolvimento de Sistemas da ETEC de Itaquaquecetuba. Para ir além da sala de aula, fiz o curso de Java da EACH-USP (USP Leste) e os cursos de Lógica de Programação e Projetos Ágeis com Scrum da DIO. Foi ali que aprendi a pensar como dev.',
     tags: ['Java', 'Lógica', 'Scrum', 'ETEC'],
-    accent: '#ff4d9d',
+    accent: '#b86b7e',
   },
   {
     num: '02',
@@ -34,7 +34,7 @@ const CHAPTERS = [
     kicker: '// atendimento e suporte no CNA',
     body: 'Meu primeiro emprego foi como Assistente Administrativo no CNA Itaim Paulista. Entre atendimento ao cliente e apoio administrativo, também cuidava do suporte básico à rede e aos equipamentos da unidade. Aprendi a ouvir quem está do outro lado — e a resolver o problema dela.',
     tags: ['Atendimento', 'Suporte', 'Redes', 'CNA'],
-    accent: '#c77dff',
+    accent: '#c9a99a',
   },
   {
     num: '03',
@@ -43,7 +43,7 @@ const CHAPTERS = [
     kicker: '// sistemas críticos no Hospital BP',
     body: 'Entrei no Hospital BP como Aprendiz de Service Desk, em Gestão de Acessos e Monitoria, e fui efetivada como Técnica em Help Desk Júnior. Hoje dou suporte a TOTVS, TASY e RIS/PACS, enquanto curso Análise e Desenvolvimento de Sistemas na FIAP — o próximo passo é levar essa visão ao desenvolvimento.',
     tags: ['Hospital BP', 'TOTVS', 'TASY', 'FIAP'],
-    accent: '#fbeef4',
+    accent: '#3b2f2f',
   },
 ] as const;
 
@@ -60,18 +60,18 @@ const EASE_OUT = [0.4,  0, 0.6, 1]    as const;
 // Cada tag tem a sua cor (mesma linguagem da seção Skills); cai para o accent
 // do capítulo se a tag não estiver no mapa.
 const TAG_COLORS: Record<string, string> = {
-  'Java': '#ff8fc4',
-  'Lógica': '#c77dff',
-  'Scrum': '#f0abfc',
-  'ETEC': '#fb7185',
-  'Atendimento': '#ff4d9d',
-  'Suporte': '#fdba74',
-  'Redes': '#d8b4fe',
-  'CNA': '#c4b5fd',
-  'Hospital BP': '#fda4af',
-  'TOTVS': '#f9a8d4',
-  'TASY': '#e879f9',
-  'FIAP': '#ff4d9d',
+  'Java': '#c0727f',
+  'Lógica': '#a8826f',
+  'Scrum': '#8a7266',
+  'ETEC': '#c0727f',
+  'Atendimento': '#b86b7e',
+  'Suporte': '#b07a6a',
+  'Redes': '#9c6b8a',
+  'CNA': '#8e5a78',
+  'Hospital BP': '#a8826f',
+  'TOTVS': '#c0727f',
+  'TASY': '#8e5a78',
+  'FIAP': '#b86b7e',
 };
 
 // As tags sobem em cascata, coloridas, quando o capítulo entra na tela.
@@ -134,8 +134,8 @@ export default function HistoriaSection() {
   const ch = CHAPTERS[idx];
 
   return (
-    <div ref={trackRef} className="relative bg-[#0f070b]" style={{ height: '400vh' }}>
-      <div className="sticky top-0 h-screen overflow-hidden bg-[#0f070b]">
+    <div ref={trackRef} className="relative bg-[#faf6f2]" style={{ height: '400vh' }}>
+      <div className="sticky top-0 h-screen overflow-hidden bg-[#faf6f2]">
 
         {/* Ambient chapter glow */}
         <AnimatePresence mode="wait">
@@ -155,7 +155,7 @@ export default function HistoriaSection() {
         {/* Giant watermark number */}
         <span
           aria-hidden
-          className="pointer-events-none absolute right-0 select-none font-display text-white leading-none"
+          className="pointer-events-none absolute right-0 select-none font-display text-ink leading-none"
           style={{ fontSize: '32vw', bottom: '-0.05em', opacity: 0.045 }}
         >
           {ch.num}
@@ -163,7 +163,7 @@ export default function HistoriaSection() {
 
         {/* ── Left progress rail ── */}
         <div className="absolute left-6 top-0 bottom-0 hidden md:flex flex-col items-center py-14 z-30">
-          <div className="relative flex-1 w-px bg-white/[0.10]">
+          <div className="relative flex-1 w-px bg-ink/[0.10]">
             <div
               ref={progressRef}
               className="absolute top-0 left-0 w-full"
@@ -176,7 +176,7 @@ export default function HistoriaSection() {
                 key={i}
                 animate={{
                   scale: i === idx ? 1.7 : 1,
-                  backgroundColor: i === idx ? ch.accent : 'rgba(255,255,255,0.18)',
+                  backgroundColor: i === idx ? ch.accent : 'rgba(59,47,47,0.18)',
                 }}
                 transition={{ duration: 0.4 }}
                 className="h-1.5 w-1.5 rounded-full"
@@ -197,14 +197,14 @@ export default function HistoriaSection() {
               exit={{ opacity: 0, y: -10, transition: { duration: 0.26 } }}
               className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-6 md:mb-7"
             >
-              <span className="font-code text-[11px] tracking-[0.45em] text-white/35 tabular-nums">
+              <span className="font-code text-[11px] tracking-[0.45em] text-ink/35 tabular-nums">
                 {ch.year}
               </span>
-              <span className="hidden h-px w-10 shrink-0 bg-white/[0.18] sm:block" />
+              <span className="hidden h-px w-10 shrink-0 bg-ink/[0.18] sm:block" />
               <span className="font-code text-[11px] tracking-widest" style={{ color: ch.accent }}>
                 {ch.kicker}
               </span>
-              <span className="ml-auto hidden sm:block font-code text-[11px] tracking-widest text-white/[0.18]">
+              <span className="ml-auto hidden sm:block font-code text-[11px] tracking-widest text-ink/[0.18]">
                 {ch.num}&thinsp;/&thinsp;0{CHAPTERS.length}
               </span>
             </motion.div>
@@ -221,7 +221,7 @@ export default function HistoriaSection() {
                 initial={{ y: '104%' }}
                 animate={{ y: '0%', transition: { duration: 0.74, ease: EASE_IN } }}
                 exit={{ y: '-104%', transition: { duration: 0.44, ease: EASE_OUT } }}
-                className="absolute bottom-[0.05em] inset-x-0 font-display text-[#fbeef4] whitespace-nowrap"
+                className="absolute bottom-[0.05em] inset-x-0 font-display text-[#3b2f2f] whitespace-nowrap"
                 style={{
                   fontSize: KW_FS,
                   lineHeight: '0.95',
@@ -235,7 +235,7 @@ export default function HistoriaSection() {
 
           {/* Accent underline — grows with scroll progress within the chapter */}
           <div className="relative mt-4 mb-6 md:mt-5 md:mb-9" style={{ height: '2px' }}>
-            <div className="absolute inset-0 bg-white/[0.08]" />
+            <div className="absolute inset-0 bg-ink/[0.08]" />
             <div
               ref={accentRef}
               className="absolute inset-0 origin-left"
@@ -260,7 +260,7 @@ export default function HistoriaSection() {
                   exit={{ opacity: 0, y: -14, filter: 'blur(8px)', transition: { duration: 0.3 } }}
                   className="flex flex-col gap-5 md:gap-6"
                 >
-                  <p className="max-w-xl font-editorial text-base italic leading-snug text-white/[0.60] sm:text-xl md:text-[1.35rem]">
+                  <p className="max-w-xl font-editorial text-base italic leading-snug text-ink/[0.60] sm:text-xl md:text-[1.35rem]">
                     {ch.body}
                   </p>
                   {/* Skill / trait tags — coloridas, sobem em cascata ao aparecer */}
@@ -310,7 +310,7 @@ export default function HistoriaSection() {
                 alt="Gabriely Bonfim Silva"
                 hint="passe o mouse · arraste o dedo"
               />
-              <figcaption className="mt-3 font-code text-[10px] uppercase tracking-[0.3em] text-white/30">
+              <figcaption className="mt-3 font-code text-[10px] uppercase tracking-[0.3em] text-ink/30">
                 preto &amp; branco&nbsp;&nbsp;⇄&nbsp;&nbsp;cor
               </figcaption>
             </figure>
@@ -321,7 +321,7 @@ export default function HistoriaSection() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { delay: 1.1, duration: 0.7 } }}
-              className="absolute bottom-10 left-6 md:bottom-12 md:left-24 font-code text-[10px] uppercase tracking-[0.45em] text-white/[0.22]"
+              className="absolute bottom-10 left-6 md:bottom-12 md:left-24 font-code text-[10px] uppercase tracking-[0.45em] text-ink/[0.22]"
             >
               role para continuar
             </motion.p>
@@ -329,7 +329,7 @@ export default function HistoriaSection() {
         </div>
 
         {/* Bottom fade into next section */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0f070b] to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#faf6f2] to-transparent" />
       </div>
     </div>
   );

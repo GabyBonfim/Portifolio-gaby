@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        ink: "#3b2f2f",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         "muted-foreground": "hsl(var(--muted-foreground))",

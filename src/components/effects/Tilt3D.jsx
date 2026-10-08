@@ -41,7 +41,7 @@ export default function Tilt3D({
         `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(${scale})`
       if (glare && glareRef.current) {
         glareRef.current.style.background =
-          `radial-gradient(circle at ${px * 100}% ${py * 100}%, rgba(255,255,255,0.22), transparent 55%)`
+          `radial-gradient(circle at ${px * 100}% ${py * 100}%, rgba(59,47,47,0.22), transparent 55%)`
         glareRef.current.style.opacity = '1'
       }
     })

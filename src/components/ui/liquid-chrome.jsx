@@ -119,10 +119,10 @@ function buildEnvironment(renderer) {
     envScene.add(mesh)
   }
 
-  panel('#c77dff', 2.6, [0, 5, 3], 12)   // cyan key light (top)
-  panel('#ff4d9d', 1.8, [-6, -1, 4], 9)  // brand-blue fill (left)
+  panel('#c9a99a', 2.6, [0, 5, 3], 12)   // cyan key light (top)
+  panel('#b86b7e', 1.8, [-6, -1, 4], 9)  // brand-blue fill (left)
   panel('#dfeaff', 3.4, [3.5, 3.5, 5], 2.6) // tight white spec hotspot
-  panel('#5c0f3a', 1.2, [4, -4, -5], 12) // deep-blue back fill
+  panel('#f1e1dc', 1.2, [4, -4, -5], 12) // deep-blue back fill
 
   const pmrem = new THREE.PMREMGenerator(renderer)
   const rt = pmrem.fromScene(envScene, 0, 0.1, 100)
@@ -221,7 +221,7 @@ export default function LiquidChrome({ className = '', posterSrc }) {
     // A touch of direct light adds crisp moving speculars on the melt.
     const key = new THREE.DirectionalLight('#cfe7ff', 1.1)
     key.position.set(2, 3, 4)
-    const rim = new THREE.DirectionalLight('#ff4d9d', 0.7)
+    const rim = new THREE.DirectionalLight('#b86b7e', 0.7)
     rim.position.set(-3, -2, -2)
     scene.add(key, rim, new THREE.AmbientLight('#0a1430', 0.4))
 
@@ -312,7 +312,7 @@ export default function LiquidChrome({ className = '', posterSrc }) {
             ? { backgroundImage: `url(${posterSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }
             : {
                 background:
-                  'radial-gradient(56% 56% at 46% 42%, rgba(255,170,210,0.32) 0%, rgba(255,77,157,0.18) 36%, rgba(15,7,11,0) 70%)',
+                  'radial-gradient(56% 56% at 46% 42%, rgba(242,212,217,0.32) 0%, rgba(184,107,126,0.18) 36%, rgba(250,246,242,0) 70%)',
               }
         }
       />

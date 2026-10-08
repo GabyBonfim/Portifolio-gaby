@@ -25,7 +25,7 @@ const CHAPTERS = [
     kicker: '// os primeiros códigos na ETEC',
     body: 'Comecei no Ensino Médio Integrado ao Técnico em Desenvolvimento de Sistemas da ETEC de Itaquaquecetuba. Para ir além da sala de aula, fiz o curso de Java da EACH-USP (USP Leste) e os cursos de Lógica de Programação e Projetos Ágeis com Scrum da DIO. Foi ali que aprendi a pensar como dev.',
     tags: ['Java', 'Lógica', 'Scrum', 'ETEC'],
-    accent: '#2f6bff',
+    accent: '#ff4d9d',
   },
   {
     num: '02',
@@ -34,7 +34,7 @@ const CHAPTERS = [
     kicker: '// atendimento e suporte no CNA',
     body: 'Meu primeiro emprego foi como Assistente Administrativo no CNA Itaim Paulista. Entre atendimento ao cliente e apoio administrativo, também cuidava do suporte básico à rede e aos equipamentos da unidade. Aprendi a ouvir quem está do outro lado — e a resolver o problema dela.',
     tags: ['Atendimento', 'Suporte', 'Redes', 'CNA'],
-    accent: '#38e0ff',
+    accent: '#c77dff',
   },
   {
     num: '03',
@@ -43,7 +43,7 @@ const CHAPTERS = [
     kicker: '// sistemas críticos no Hospital BP',
     body: 'Entrei no Hospital BP como Aprendiz de Service Desk, em Gestão de Acessos e Monitoria, e fui efetivada como Técnica em Help Desk Júnior. Hoje dou suporte a TOTVS, TASY e RIS/PACS, enquanto curso Análise e Desenvolvimento de Sistemas na FIAP — o próximo passo é levar essa visão ao desenvolvimento.',
     tags: ['Hospital BP', 'TOTVS', 'TASY', 'FIAP'],
-    accent: '#e9edf7',
+    accent: '#fbeef4',
   },
 ] as const;
 
@@ -60,18 +60,18 @@ const EASE_OUT = [0.4,  0, 0.6, 1]    as const;
 // Cada tag tem a sua cor (mesma linguagem da seção Skills); cai para o accent
 // do capítulo se a tag não estiver no mapa.
 const TAG_COLORS: Record<string, string> = {
-  'Java': '#f89820',
-  'Lógica': '#a78bfa',
-  'Scrum': '#34d399',
-  'ETEC': '#f87171',
-  'Atendimento': '#f472b6',
-  'Suporte': '#fb923c',
-  'Redes': '#38bdf8',
-  'CNA': '#818cf8',
-  'Hospital BP': '#2dd4bf',
-  'TOTVS': '#60a5fa',
-  'TASY': '#4ade80',
-  'FIAP': '#ec4899',
+  'Java': '#ff8fc4',
+  'Lógica': '#c77dff',
+  'Scrum': '#f0abfc',
+  'ETEC': '#fb7185',
+  'Atendimento': '#ff4d9d',
+  'Suporte': '#fdba74',
+  'Redes': '#d8b4fe',
+  'CNA': '#c4b5fd',
+  'Hospital BP': '#fda4af',
+  'TOTVS': '#f9a8d4',
+  'TASY': '#e879f9',
+  'FIAP': '#ff4d9d',
 };
 
 // As tags sobem em cascata, coloridas, quando o capítulo entra na tela.
@@ -134,8 +134,8 @@ export default function HistoriaSection() {
   const ch = CHAPTERS[idx];
 
   return (
-    <div ref={trackRef} className="relative bg-[#05070f]" style={{ height: '400vh' }}>
-      <div className="sticky top-0 h-screen overflow-hidden bg-[#05070f]">
+    <div ref={trackRef} className="relative bg-[#0f070b]" style={{ height: '400vh' }}>
+      <div className="sticky top-0 h-screen overflow-hidden bg-[#0f070b]">
 
         {/* Ambient chapter glow */}
         <AnimatePresence mode="wait">
@@ -221,7 +221,7 @@ export default function HistoriaSection() {
                 initial={{ y: '104%' }}
                 animate={{ y: '0%', transition: { duration: 0.74, ease: EASE_IN } }}
                 exit={{ y: '-104%', transition: { duration: 0.44, ease: EASE_OUT } }}
-                className="absolute bottom-[0.05em] inset-x-0 font-display text-[#e9edf7] whitespace-nowrap"
+                className="absolute bottom-[0.05em] inset-x-0 font-display text-[#fbeef4] whitespace-nowrap"
                 style={{
                   fontSize: KW_FS,
                   lineHeight: '0.95',
@@ -329,7 +329,7 @@ export default function HistoriaSection() {
         </div>
 
         {/* Bottom fade into next section */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#05070f] to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0f070b] to-transparent" />
       </div>
     </div>
   );

@@ -223,7 +223,7 @@ export function ScrollPortraitWall({
                     {showCaptions && (
                       <div className="absolute -bottom-1 left-0 flex w-full translate-y-full flex-col gap-0 font-code text-[10px] uppercase leading-tight tracking-wide sm:flex-row sm:items-baseline sm:justify-between sm:gap-2 sm:text-xs">
                         <span className="truncate text-white/75">{s.name}</span>
-                        <span className="shrink-0 text-[#6f97ff]/70">{s.role}</span>
+                        <span className="shrink-0 text-[#ff8fc4]/70">{s.role}</span>
                       </div>
                     )}
                   </div>

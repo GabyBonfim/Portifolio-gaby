@@ -4,34 +4,34 @@
 
 @layer base {
   :root {
-    /* shadcn-compatible CSS variables (HSL channel values) — blue system */
-    --background: 225 50% 4%;
-    --foreground: 222 40% 94%;
-    --muted-foreground: 220 16% 62%;
-    --primary: 223 100% 59%;
+    /* shadcn-compatible CSS variables (HSL channel values) — pink system */
+    --background: 330 36% 4%;
+    --foreground: 333 70% 96%;
+    --muted-foreground: 330 14% 66%;
+    --primary: 333 100% 65%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 222 32% 14%;
-    --secondary-foreground: 222 40% 94%;
+    --secondary: 330 30% 14%;
+    --secondary-foreground: 333 70% 96%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --accent: 222 32% 18%;
-    --accent-foreground: 222 40% 94%;
-    --input: 222 32% 18%;
-    --ring: 223 100% 59%;
-    --ring-offset-background: 225 50% 4%;
+    --accent: 330 30% 18%;
+    --accent-foreground: 333 70% 96%;
+    --input: 330 30% 18%;
+    --ring: 333 100% 65%;
+    --ring-offset-background: 330 36% 4%;
 
     /* Brand palette (used directly by the shell + effects) */
-    --bg: #05070f;
-    --bg-soft: #0a0e1c;
-    --ink: #e9edf7;
-    --brand: #2f6bff;
-    --brand-bright: #6f97ff;
-    --brand-cyan: #38e0ff;
-    --brand-deep: #0a1f6b;
-    --color-primary: #05070f;
-    --color-secondary: #0a0e1c;
-    --color-accent: #2f6bff;
-    --color-text: #e9edf7;
+    --bg: #0f070b;
+    --bg-soft: #1a0d14;
+    --ink: #fbeef4;
+    --brand: #ff4d9d;
+    --brand-bright: #ff8fc4;
+    --brand-cyan: #c77dff;
+    --brand-deep: #5c0f3a;
+    --color-primary: #0f070b;
+    --color-secondary: #1a0d14;
+    --color-accent: #ff4d9d;
+    --color-text: #fbeef4;
     --color-text-muted: rgba(245, 245, 245, 0.7);
     --color-border: rgba(255, 255, 255, 0.05);
     --color-overlay: rgba(0, 0, 0, 0.5);
@@ -66,8 +66,8 @@
   html {
     /* Lenis drives smoothing; native smooth-scroll would double up. */
     scroll-behavior: auto;
-    background-color: #05070f;
-    color: #e9edf7;
+    background-color: #0f070b;
+    color: #fbeef4;
     /* Stop iOS/Safari from inflating font sizes in landscape */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -126,7 +126,7 @@
   }
 
   ::selection {
-    background-color: #2f6bff;
+    background-color: #ff4d9d;
     color: #fff;
   }
 
@@ -163,10 +163,10 @@
   /* Brand accent helpers (named -brand to avoid clashing with Tailwind's
      `accent` color token, which is a dark blue-gray surface) */
   .text-brand {
-    color: #2f6bff;
+    color: #ff4d9d;
   }
   .bg-brand {
-    background-color: #2f6bff;
+    background-color: #ff4d9d;
   }
 
   /* Vertical metadata rail */
@@ -177,8 +177,8 @@
   /* Layered radial atmosphere (blue horizon + cyan corner) */
   .bg-grain {
     background-image:
-      radial-gradient(1200px 620px at 50% -10%, rgba(47, 107, 255, 0.16), transparent 62%),
-      radial-gradient(900px 600px at 100% 110%, rgba(56, 224, 255, 0.08), transparent 60%);
+      radial-gradient(1200px 620px at 50% -10%, rgba(255, 77, 157, 0.16), transparent 62%),
+      radial-gradient(900px 600px at 100% 110%, rgba(199, 125, 255, 0.08), transparent 60%);
   }
 
   /* Real film grain via SVG turbulence — fixed full-screen overlay */
@@ -219,14 +219,14 @@
   /* Soft blue aurora mesh — atmospheric depth behind seams/markers */
   .bg-aurora {
     background-image:
-      radial-gradient(60% 120% at 15% 0%, rgba(47, 107, 255, 0.12), transparent 60%),
-      radial-gradient(50% 120% at 85% 100%, rgba(56, 224, 255, 0.08), transparent 60%);
+      radial-gradient(60% 120% at 15% 0%, rgba(255, 77, 157, 0.12), transparent 60%),
+      radial-gradient(50% 120% at 85% 100%, rgba(199, 125, 255, 0.08), transparent 60%);
   }
 
   /* Pulsing connector dot used on section bridges */
   @keyframes thread-pulse {
-    0%, 100% { opacity: 0.5; box-shadow: 0 0 0 0 rgba(47, 107, 255, 0.5); }
-    50% { opacity: 1; box-shadow: 0 0 0 6px rgba(47, 107, 255, 0); }
+    0%, 100% { opacity: 0.5; box-shadow: 0 0 0 0 rgba(255, 77, 157, 0.5); }
+    50% { opacity: 1; box-shadow: 0 0 0 6px rgba(255, 77, 157, 0); }
   }
   .thread-dot {
     animation: thread-pulse 2.4s ease-in-out infinite;
@@ -249,8 +249,8 @@
     width: 7px;
     height: 7px;
     border-radius: 9999px;
-    background: #38e0ff;
-    box-shadow: 0 0 12px rgba(56, 224, 255, 0.8);
+    background: #c77dff;
+    box-shadow: 0 0 12px rgba(199, 125, 255, 0.8);
     transition: opacity 0.25s ease, width 0.2s ease, height 0.2s ease;
   }
   .cursor-dot.is-hidden {
@@ -269,8 +269,8 @@
     transition: opacity 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
   }
   .cursor-ring.is-active {
-    border-color: rgba(47, 107, 255, 0.9);
-    background-color: rgba(47, 107, 255, 0.12);
+    border-color: rgba(255, 77, 157, 0.9);
+    background-color: rgba(255, 77, 157, 0.12);
     mix-blend-mode: normal;
   }
   .cursor-label {
@@ -278,7 +278,7 @@
     font-size: 9px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #e9edf7;
+    color: #fbeef4;
     opacity: 0;
     transition: opacity 0.2s ease;
     transform: scale(0.42);
@@ -319,7 +319,7 @@
     to { background-position: 200% center; }
   }
   .text-gradient-anim {
-    background: linear-gradient(90deg, #2f6bff, #38e0ff, #6f97ff, #2f6bff);
+    background: linear-gradient(90deg, #ff4d9d, #c77dff, #ff8fc4, #ff4d9d);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -367,7 +367,7 @@
     bottom: -3px;
     height: 1.5px;
     width: 100%;
-    background: #2f6bff;
+    background: #ff4d9d;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s var(--ease-out-expo);
@@ -382,7 +382,7 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: #2f6bff;
+    background: #ff4d9d;
     transform: translateY(101%);
     transition: transform 0.45s var(--ease-out-expo);
   }

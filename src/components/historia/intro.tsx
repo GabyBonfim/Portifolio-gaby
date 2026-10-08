@@ -50,13 +50,13 @@ export default function HistoriaIntro() {
   return (
     <section
       id="historia"
-      className="relative scroll-mt-20 bg-[#05070f] px-6 pt-20 pb-28 md:pt-28 md:pb-36 overflow-hidden"
+      className="relative scroll-mt-20 bg-[#0f070b] px-6 pt-20 pb-28 md:pt-28 md:pb-36 overflow-hidden"
     >
       {/* Background glow that is revealed by the ink mask */}
       <div
         className="absolute inset-0 z-0 opacity-90 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle at 30% 40%, rgba(47, 107, 255, 0.4) 0%, rgba(56, 224, 255, 0.2) 35%, rgba(10, 31, 107, 0.35) 65%, transparent 80%)'
+          background: 'radial-gradient(circle at 30% 40%, rgba(255, 77, 157, 0.4) 0%, rgba(199, 125, 255, 0.2) 35%, rgba(92, 15, 58, 0.35) 65%, transparent 80%)'
         }}
       />
 
@@ -71,7 +71,7 @@ export default function HistoriaIntro() {
       />
 
       {/* Ink reveal canvas masking layer */}
-      <InkReveal maskColor={[5, 7, 15]} className="z-0" />
+      <InkReveal maskColor={[15, 7, 11]} className="z-0" />
 
       {/* grain */}
       <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.04] z-10" />
@@ -91,7 +91,7 @@ export default function HistoriaIntro() {
       >
         {/* kicker */}
         <motion.div variants={rise} className="flex items-center gap-4 mb-14">
-          <span className="h-px w-10 bg-[#2f6bff]" />
+          <span className="h-px w-10 bg-[#ff4d9d]" />
           <span className="font-code text-xs uppercase tracking-[0.35em] text-white/50">
             01 — Trajetória
           </span>
@@ -104,13 +104,13 @@ export default function HistoriaIntro() {
             {/* Section heading */}
             <motion.h2
               variants={rise}
-              className="font-display leading-none text-[#e9edf7] mb-10"
+              className="font-display leading-none text-[#fbeef4] mb-10"
               style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)' }}
             >
               Minha{' '}
               <motion.span
-                style={{ color: '#2f6bff' }}
-                animate={{ color: ['#2f6bff', '#38e0ff', '#2f6bff'] }}
+                style={{ color: '#ff4d9d' }}
+                animate={{ color: ['#ff4d9d', '#c77dff', '#ff4d9d'] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
               >
                 História
@@ -146,15 +146,15 @@ export default function HistoriaIntro() {
                 variants={rise}
                 className="inline-flex items-center gap-3 rounded-full px-5 py-2.5 border"
                 style={{
-                  borderColor: 'rgba(47,107,255,0.28)',
-                  background: 'rgba(47,107,255,0.06)',
+                  borderColor: 'rgba(255,77,157,0.28)',
+                  background: 'rgba(255,77,157,0.06)',
                 }}
               >
                 <span
                   className="h-2 w-2 rounded-full animate-pulse"
-                  style={{ background: '#2f6bff' }}
+                  style={{ background: '#ff4d9d' }}
                 />
-                <span className="font-code text-xs tracking-[0.28em] uppercase text-[#6f97ff]">
+                <span className="font-code text-xs tracking-[0.28em] uppercase text-[#ff8fc4]">
                   Em busca da primeira vaga como dev júnior
                 </span>
               </motion.div>
@@ -191,10 +191,10 @@ export default function HistoriaIntro() {
                 >
                   {/* base border/bg moved to Tailwind classes (identical values)
                       so the hover glow can override them */}
-                  <div className="rounded-2xl border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.025)] px-6 py-5 transition-colors duration-300 hover:border-[rgba(47,107,255,0.45)] hover:bg-white/[0.05]">
+                  <div className="rounded-2xl border border-[rgba(255,255,255,0.07)] bg-[rgba(255,255,255,0.025)] px-6 py-5 transition-colors duration-300 hover:border-[rgba(255,77,157,0.45)] hover:bg-white/[0.05]">
                     <div
                       className="font-display leading-none mb-1.5"
-                      style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)', color: '#e9edf7' }}
+                      style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)', color: '#fbeef4' }}
                     >
                       {s.value}
                     </div>
@@ -215,7 +215,7 @@ export default function HistoriaIntro() {
       </div>
 
       {/* bottom fade into HistoriaSection */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2f6bff]/20 to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ff4d9d]/20 to-transparent" />
     </section>
   );
 }

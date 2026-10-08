@@ -155,7 +155,7 @@ export default function RevealSpotlight({
           height: haloSize,
           opacity: haloOpacity,
           background:
-            "radial-gradient(circle, rgba(0,0,0,0) 54%, rgba(47,107,255,0.55) 66%, rgba(56,224,255,0.25) 80%, rgba(0,0,0,0) 100%)",
+            "radial-gradient(circle, rgba(0,0,0,0) 54%, rgba(255,77,157,0.55) 66%, rgba(199,125,255,0.25) 80%, rgba(0,0,0,0) 100%)",
         }}
       />
     </Frame>
@@ -183,8 +183,8 @@ const Frame = ({ ref, className, active, hint, children, ...handlers }: FramePro
     className={cn(
       // touch-pan-y lets the page still scroll vertically; horizontal drags /
       // taps drive the spotlight instead of being swallowed.
-      "group relative aspect-[4/5] w-full touch-pan-y select-none overflow-hidden rounded-xl border rule bg-[#05070f]",
-      "shadow-[0_40px_120px_-40px_rgba(47,107,255,0.45)]",
+      "group relative aspect-[4/5] w-full touch-pan-y select-none overflow-hidden rounded-xl border rule bg-[#0f070b]",
+      "shadow-[0_40px_120px_-40px_rgba(255,77,157,0.45)]",
       className,
     )}
     {...handlers}
@@ -196,7 +196,7 @@ const Frame = ({ ref, className, active, hint, children, ...handlers }: FramePro
     <div
       aria-hidden
       className="pointer-events-none absolute inset-0 z-20"
-      style={{ boxShadow: "inset 0 0 120px 20px rgba(5,7,15,0.7)" }}
+      style={{ boxShadow: "inset 0 0 120px 20px rgba(15,7,11,0.7)" }}
     />
 
     {/* Resting hint — fades out the moment the reveal is active */}
@@ -210,13 +210,13 @@ const Frame = ({ ref, className, active, hint, children, ...handlers }: FramePro
       <span
         aria-hidden
         className="absolute inset-0"
-        style={{ background: "radial-gradient(58% 48% at 50% 50%, rgba(5,7,15,0.6) 0%, rgba(5,7,15,0) 72%)" }}
+        style={{ background: "radial-gradient(58% 48% at 50% 50%, rgba(15,7,11,0.6) 0%, rgba(15,7,11,0) 72%)" }}
       />
       <span className="relative flex h-11 w-11 items-center justify-center">
         <span className="absolute inset-0 rounded-full border border-white/40" />
         <span className="thread-dot h-2 w-2 rounded-full bg-brand" />
       </span>
-      <span className="relative max-w-[82%] rounded-full border border-white/15 bg-[#05070f]/55 px-3 py-1.5 text-center font-code text-[9px] uppercase leading-tight tracking-[0.26em] text-white/85 backdrop-blur-sm">
+      <span className="relative max-w-[82%] rounded-full border border-white/15 bg-[#0f070b]/55 px-3 py-1.5 text-center font-code text-[9px] uppercase leading-tight tracking-[0.26em] text-white/85 backdrop-blur-sm">
         {hint}
       </span>
     </div>

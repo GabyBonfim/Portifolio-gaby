@@ -94,7 +94,7 @@ function Marquee() {
 // Magazine-style section header — title splits into words, each surges in independently.
 function SectionMarker({ id, num, kicker, title, lead }) {
   return (
-    <div id={id} className="relative scroll-mt-24 overflow-hidden border-t rule bg-[#05070f] px-6 py-20 md:py-32">
+    <div id={id} className="relative scroll-mt-24 overflow-hidden border-t rule bg-[#0f070b] px-6 py-20 md:py-32">
       <span
         aria-hidden
         className="pointer-events-none absolute -right-4 -top-10 select-none font-display text-[34vw] leading-none text-white/[0.035] md:text-[22vw]"
@@ -116,7 +116,7 @@ function SectionMarker({ id, num, kicker, title, lead }) {
         {/* Each word surges up on its own — staggered by wordStagger */}
         <motion.h2
           variants={wordStagger}
-          className="mt-7 font-display text-[12vw] leading-none text-[#e9edf7] sm:text-6xl md:text-7xl"
+          className="mt-7 font-display text-[12vw] leading-none text-[#fbeef4] sm:text-6xl md:text-7xl"
           aria-label={title}
         >
           {title.split(' ').map((word, i) => (
@@ -200,7 +200,7 @@ function App() {
   }, [menuOpen])
 
   return (
-    <div className="relative min-h-screen bg-[#05070f] text-[#e9edf7] selection:bg-[#2f6bff] selection:text-white">
+    <div className="relative min-h-screen bg-[#0f070b] text-[#fbeef4] selection:bg-[#ff4d9d] selection:text-white">
       {/* Custom magnetic cursor (desktop / fine-pointer only) */}
       <CustomCursor />
 
@@ -210,7 +210,7 @@ function App() {
       {/* Scroll-progress thread */}
       <motion.div
         style={{ scaleX: scrollYProgress }}
-        className="fixed left-0 top-0 z-[110] h-0.5 w-full origin-left bg-gradient-to-r from-[#2f6bff] via-[#6f97ff] to-[#38e0ff]"
+        className="fixed left-0 top-0 z-[110] h-0.5 w-full origin-left bg-gradient-to-r from-[#ff4d9d] via-[#ff8fc4] to-[#c77dff]"
       />
 
       {/* Film-grain overlay */}
@@ -224,11 +224,11 @@ function App() {
       </div>
 
       {/* Header */}
-      <header className="pt-safe sticky top-0 z-50 border-b rule bg-[#05070f]/75 backdrop-blur-md">
+      <header className="pt-safe sticky top-0 z-50 border-b rule bg-[#0f070b]/75 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4">
           <a href="#top" onClick={(e) => handleNav(e, '#top')} className="flex items-center gap-3">
             <span className="flex h-9 w-9 items-center justify-center rounded-sm bg-brand font-display text-sm text-white">G</span>
-            <span className="hidden font-code text-xs tracking-[0.3em] text-[#e9edf7] sm:block">
+            <span className="hidden font-code text-xs tracking-[0.3em] text-[#fbeef4] sm:block">
               GBS<span className="text-brand">_</span>STUDIO
             </span>
           </a>
@@ -240,7 +240,7 @@ function App() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNav(e, item.href)}
-                className="group flex items-baseline gap-1.5 px-2 py-1.5 font-code text-sm text-white/55 transition-colors hover:text-[#e9edf7]"
+                className="group flex items-baseline gap-1.5 px-2 py-1.5 font-code text-sm text-white/55 transition-colors hover:text-[#fbeef4]"
               >
                 <span className="text-[10px] text-brand">{item.num}</span>
                 <span className="link-underline">{item.label}</span>
@@ -253,7 +253,7 @@ function App() {
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menu"
             aria-expanded={menuOpen}
-            className="flex h-11 w-11 items-center justify-center rounded-full text-[#e9edf7] transition-colors hover:bg-white/5 sm:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-[#fbeef4] transition-colors hover:bg-white/5 sm:hidden"
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -268,17 +268,17 @@ function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="pt-safe fixed inset-0 z-[120] flex flex-col bg-[#05070f]/97 backdrop-blur-xl sm:hidden"
+            className="pt-safe fixed inset-0 z-[120] flex flex-col bg-[#0f070b]/97 backdrop-blur-xl sm:hidden"
           >
             {/* Top bar inside the overlay */}
             <div className="flex items-center justify-between px-5 py-3.5">
-              <span className="font-code text-xs tracking-[0.3em] text-[#e9edf7]">
+              <span className="font-code text-xs tracking-[0.3em] text-[#fbeef4]">
                 GBS<span className="text-brand">_</span>STUDIO
               </span>
               <button
                 onClick={() => setMenuOpen(false)}
                 aria-label="Fechar menu"
-                className="flex h-11 w-11 items-center justify-center rounded-full text-[#e9edf7] transition-colors hover:bg-white/5"
+                className="flex h-11 w-11 items-center justify-center rounded-full text-[#fbeef4] transition-colors hover:bg-white/5"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -296,7 +296,7 @@ function App() {
                   className="group flex items-center gap-4 border-b rule py-4"
                 >
                   <span className="font-code text-xs text-brand">{item.num}</span>
-                  <span className="font-display leading-none text-[#e9edf7] transition-colors group-hover:text-brand" style={{ fontSize: 'clamp(1.75rem, 7vw, 2.5rem)' }}>
+                  <span className="font-display leading-none text-[#fbeef4] transition-colors group-hover:text-brand" style={{ fontSize: 'clamp(1.75rem, 7vw, 2.5rem)' }}>
                     {item.label}
                   </span>
                   <ArrowUpRight className="ml-auto h-5 w-5 shrink-0 text-white/30 transition-colors group-hover:text-brand" />
@@ -333,7 +333,7 @@ function App() {
       <main
         id="top"
         ref={heroTrackRef}
-        className="relative bg-grain bg-[#05070f]"
+        className="relative bg-grain bg-[#0f070b]"
         style={{ height: '280vh' }}
       >
         {/* Sticky viewport — pinned, always fills the screen */}
@@ -354,7 +354,7 @@ function App() {
             className="pointer-events-none absolute inset-0 z-[2]"
             style={{
               background:
-                'radial-gradient(130% 120% at 28% 42%, rgba(5,7,15,0.88) 0%, rgba(5,7,15,0.4) 48%, rgba(5,7,15,0) 72%)',
+                'radial-gradient(130% 120% at 28% 42%, rgba(15,7,11,0.88) 0%, rgba(15,7,11,0.4) 48%, rgba(15,7,11,0) 72%)',
             }}
           />
 
@@ -384,7 +384,7 @@ function App() {
             <div data-hero-layer="line1" className="will-change-transform">
               <motion.h1
                 variants={rise}
-                className="mt-5 font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#e9edf7]"
+                className="mt-5 font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#fbeef4]"
               >
                 Gabriely
               </motion.h1>
@@ -394,7 +394,7 @@ function App() {
             <div data-hero-layer="line2" className="will-change-transform">
               <motion.h1
                 variants={rise}
-                className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#e9edf7] md:ml-[16%]"
+                className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#fbeef4] md:ml-[16%]"
               >
                 <span className="text-gradient-anim">Bonfim</span>
               </motion.h1>
@@ -404,7 +404,7 @@ function App() {
             <div data-hero-layer="line3" className="will-change-transform">
               <motion.h1
                 variants={rise}
-                className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#e9edf7] md:ml-[5%]"
+                className="font-display text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.95] text-[#fbeef4] md:ml-[5%]"
               >
                 {/* Hover to ripple the type with an SVG liquid-distortion filter */}
                 <LiquidText data-cursor="liquid">Silva</LiquidText>
@@ -441,7 +441,7 @@ function App() {
             </ScrollVelocity>
           </div>
           {/* Bottom-edge fade — blends the hero into the next section */}
-          <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 z-[19] bg-gradient-to-t from-[#05070f] to-transparent" />
+          <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 z-[19] bg-gradient-to-t from-[#0f070b] to-transparent" />
         </div>
       </main>
 
@@ -457,7 +457,7 @@ function App() {
       {/* ── Por onde passei ─────────────────────────────────────────
           Blob WebGL ambiente, calmado por um véu radial para o conteúdo
           ficar nítido; grão + selo na linguagem das outras seções. */}
-      <section id="parceiros" className="relative overflow-hidden border-t rule bg-[#05070f] py-20 md:py-28">
+      <section id="parceiros" className="relative overflow-hidden border-t rule bg-[#0f070b] py-20 md:py-28">
         <Suspense fallback={null}>
           <WebGLHero className="pointer-events-none absolute inset-0 z-0 opacity-40" />
         </Suspense>
@@ -468,7 +468,7 @@ function App() {
           className="pointer-events-none absolute inset-0 z-[1]"
           style={{
             background:
-              'radial-gradient(78% 62% at 50% 44%, rgba(5,7,15,0.84) 0%, rgba(5,7,15,0.38) 56%, rgba(5,7,15,0) 82%)',
+              'radial-gradient(78% 62% at 50% 44%, rgba(15,7,11,0.84) 0%, rgba(15,7,11,0.38) 56%, rgba(15,7,11,0) 82%)',
           }}
         />
         {/* Film grain for cohesion with the rest of the site */}
@@ -543,7 +543,7 @@ function App() {
 
           {/* Footer heading — GSAP per-character mask reveal (SplitReveal) */}
           <h2
-            className="mt-8 font-display text-[13vw] leading-none text-[#e9edf7] sm:text-6xl md:text-8xl"
+            className="mt-8 font-display text-[13vw] leading-none text-[#fbeef4] sm:text-6xl md:text-8xl"
             aria-label="Vamos construir algo juntos?"
           >
             <SplitReveal as="span" className="block">Vamos construir</SplitReveal>
@@ -555,7 +555,7 @@ function App() {
               <a
                 href={`mailto:${EMAIL}`}
                 data-cursor="escrever"
-                className="group inline-flex max-w-full items-center gap-2 border-b-2 border-[#2f6bff] pb-2 font-editorial text-lg italic text-[#e9edf7] transition-colors hover:text-brand sm:gap-3 sm:text-2xl md:text-4xl"
+                className="group inline-flex max-w-full items-center gap-2 border-b-2 border-[#ff4d9d] pb-2 font-editorial text-lg italic text-[#fbeef4] transition-colors hover:text-brand sm:gap-3 sm:text-2xl md:text-4xl"
               >
                 <LiquidText as="span" className="break-words">{EMAIL}</LiquidText>
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-brand transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 sm:h-6 sm:w-6" />
@@ -574,7 +574,7 @@ function App() {
                     href={href}
                     aria-label={label}
                     data-cursor={label}
-                    className="icon-fill cta-press flex h-12 w-12 items-center justify-center rounded-full border rule text-white/60 transition-colors hover:border-[#2f6bff] hover:text-white"
+                    className="icon-fill cta-press flex h-12 w-12 items-center justify-center rounded-full border rule text-white/60 transition-colors hover:border-[#ff4d9d] hover:text-white"
                   >
                     <Icon className="h-5 w-5" />
                   </a>
@@ -591,7 +591,7 @@ function App() {
                   href={CV_URL}
                   download
                   data-cursor="baixar"
-                  className="group cta-sheen cta-press inline-flex items-center gap-2.5 rounded-full border border-[#2f6bff]/40 bg-[#2f6bff]/10 px-6 py-3.5 font-code text-xs tracking-[0.2em] text-[#6f97ff] transition-colors hover:bg-[#2f6bff]/20 hover:text-white"
+                  className="group cta-sheen cta-press inline-flex items-center gap-2.5 rounded-full border border-[#ff4d9d]/40 bg-[#ff4d9d]/10 px-6 py-3.5 font-code text-xs tracking-[0.2em] text-[#ff8fc4] transition-colors hover:bg-[#ff4d9d]/20 hover:text-white"
                 >
                   BAIXAR CV (PDF)
                   <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />

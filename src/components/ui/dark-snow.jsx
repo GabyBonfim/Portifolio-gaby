@@ -56,8 +56,8 @@ void main() {
 
   // Brand palette
   vec3 base = vec3(0.010, 0.014, 0.032);   // deep navy ~ #050712
-  vec3 blue = vec3(0.184, 0.420, 1.000);   // #2f6bff
-  vec3 cyan = vec3(0.220, 0.878, 1.000);   // #38e0ff
+  vec3 blue = vec3(0.184, 0.420, 1.000);   // #ff4d9d
+  vec3 cyan = vec3(0.220, 0.878, 1.000);   // #c77dff
 
   // Glow rising slightly above centre — the icy sculpture light
   vec2  glowPos = vec2(0.0, 0.06);

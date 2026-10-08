@@ -55,7 +55,7 @@ const sampleMediaContent: MediaContentCollection = {
 const MediaContent = ({ media }: { media: MediaContent }) => {
   return (
     <div className='mx-auto max-w-3xl text-center'>
-      <h2 className='mb-6 font-display text-3xl text-[#e9edf7] md:text-4xl'>
+      <h2 className='mb-6 font-display text-3xl text-[#fbeef4] md:text-4xl'>
         {media.date}
       </h2>
       <p className='mb-6 font-editorial text-xl italic leading-relaxed text-white/70'>

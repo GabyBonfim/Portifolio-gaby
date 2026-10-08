@@ -50,26 +50,26 @@ export function HomePage() {
   const expandRadius = progress * ORBIT_RADIUS
 
   return (
-    <div ref={containerRef} className="min-h-[300vh] bg-[#05070f] relative">
+    <div ref={containerRef} className="min-h-[300vh] bg-[#0f070b] relative">
       <div ref={viewportRef} className="relative h-screen flex items-center justify-center p-4 sm:p-8 w-full overflow-hidden">
         {/* Scale wrapper: shrinks the whole orbit on narrow viewports */}
         <div className="relative" style={{ transform: `scale(${scale})` }}>
           <div
             className={`w-[600px] h-[600px] rounded-full flex items-center justify-center transition-all duration-500 ${
-              progress > 0.6 ? "border-2 border-[#2f6bff]/20" : ""
+              progress > 0.6 ? "border-2 border-[#ff4d9d]/20" : ""
             }`}
           >
             <div
               className={`w-[500px] h-[500px] rounded-full flex items-center justify-center relative transition-all duration-500 ${
-                progress > 0.2 ? "border-2 border-[#38e0ff]/25" : ""
+                progress > 0.2 ? "border-2 border-[#c77dff]/25" : ""
               }`}
             >
-              <div className="w-[400px] h-[400px] rounded-full bg-gradient-to-r from-[#2f6bff] via-[#38e0ff] to-[#6f97ff] p-0.5 flex items-center justify-center relative shadow-[0_0_80px_rgba(47,107,255,0.35)]">
-                <div className="w-full h-full rounded-full bg-[#05070f] flex items-center justify-center relative">
+              <div className="w-[400px] h-[400px] rounded-full bg-gradient-to-r from-[#ff4d9d] via-[#c77dff] to-[#ff8fc4] p-0.5 flex items-center justify-center relative shadow-[0_0_80px_rgba(255,77,157,0.35)]">
+                <div className="w-full h-full rounded-full bg-[#0f070b] flex items-center justify-center relative">
                   
                   {/* Profiles with trigonometry positions */}
                   <div
-                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#0a0e1c] shadow-lg transition-transform duration-300 ease-out z-0"
+                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#1a0d14] shadow-lg transition-transform duration-300 ease-out z-0"
                     style={{
                       transform: `translate(${expandRadius * Math.cos(0)}px, ${expandRadius * Math.sin(0)}px)`,
                     }}
@@ -82,7 +82,7 @@ export function HomePage() {
                   </div>
 
                   <div
-                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#0a0e1c] shadow-lg transition-transform duration-300 ease-out z-0"
+                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#1a0d14] shadow-lg transition-transform duration-300 ease-out z-0"
                     style={{
                       transform: `translate(${expandRadius * Math.cos(Math.PI / 4)}px, ${expandRadius * Math.sin(Math.PI / 4)}px)`,
                     }}
@@ -95,7 +95,7 @@ export function HomePage() {
                   </div>
 
                   <div
-                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#0a0e1c] shadow-lg transition-transform duration-300 ease-out z-0"
+                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#1a0d14] shadow-lg transition-transform duration-300 ease-out z-0"
                     style={{
                       transform: `translate(${expandRadius * Math.cos(Math.PI / 2)}px, ${expandRadius * Math.sin(Math.PI / 2)}px)`,
                     }}
@@ -108,7 +108,7 @@ export function HomePage() {
                   </div>
 
                   <div
-                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#0a0e1c] shadow-lg transition-transform duration-300 ease-out z-0"
+                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#1a0d14] shadow-lg transition-transform duration-300 ease-out z-0"
                     style={{
                       transform: `translate(${expandRadius * Math.cos((3 * Math.PI) / 4)}px, ${expandRadius * Math.sin((3 * Math.PI) / 4)}px)`,
                     }}
@@ -121,7 +121,7 @@ export function HomePage() {
                   </div>
 
                   <div
-                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#0a0e1c] shadow-lg transition-transform duration-300 ease-out z-0"
+                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#1a0d14] shadow-lg transition-transform duration-300 ease-out z-0"
                     style={{
                       transform: `translate(${expandRadius * Math.cos(Math.PI)}px, ${expandRadius * Math.sin(Math.PI)}px)`,
                     }}
@@ -134,7 +134,7 @@ export function HomePage() {
                   </div>
 
                   <div
-                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#0a0e1c] shadow-lg transition-transform duration-300 ease-out z-0"
+                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#1a0d14] shadow-lg transition-transform duration-300 ease-out z-0"
                     style={{
                       transform: `translate(${expandRadius * Math.cos((5 * Math.PI) / 4)}px, ${expandRadius * Math.sin((5 * Math.PI) / 4)}px)`,
                     }}
@@ -147,7 +147,7 @@ export function HomePage() {
                   </div>
 
                   <div
-                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#0a0e1c] shadow-lg transition-transform duration-300 ease-out z-0"
+                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#1a0d14] shadow-lg transition-transform duration-300 ease-out z-0"
                     style={{
                       transform: `translate(${expandRadius * Math.cos((3 * Math.PI) / 2)}px, ${expandRadius * Math.sin((3 * Math.PI) / 2)}px)`,
                     }}
@@ -160,7 +160,7 @@ export function HomePage() {
                   </div>
 
                   <div
-                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#0a0e1c] shadow-lg transition-transform duration-300 ease-out z-0"
+                    className="absolute w-24 h-24 rounded-2xl overflow-hidden border-4 border-[#1a0d14] shadow-lg transition-transform duration-300 ease-out z-0"
                     style={{
                       transform: `translate(${expandRadius * Math.cos((7 * Math.PI) / 4)}px, ${expandRadius * Math.sin((7 * Math.PI) / 4)}px)`,
                     }}
@@ -193,14 +193,14 @@ export function HomePage() {
               className="absolute left-1/2 top-1/2 -z-10 h-[150%] w-[180%] -translate-x-1/2 -translate-y-1/2 rounded-full"
               style={{
                 background:
-                  "radial-gradient(closest-side, rgba(5,7,15,0.92) 40%, rgba(5,7,15,0.55) 65%, transparent 100%)",
+                  "radial-gradient(closest-side, rgba(15,7,11,0.92) 40%, rgba(15,7,11,0.55) 65%, transparent 100%)",
               }}
             />
             <h2
-              className="font-display leading-[0.92] text-[#e9edf7]"
+              className="font-display leading-[0.92] text-[#fbeef4]"
               style={{ fontSize: "clamp(1.9rem, 8vw, 3rem)" }}
             >
-              Full <span className="text-[#38e0ff]">Stack</span>
+              Full <span className="text-[#c77dff]">Stack</span>
             </h2>
             <p className="mt-3 max-w-[15rem] font-editorial text-base italic leading-snug text-white/60 sm:max-w-xs sm:text-lg">
               Do front ao back, da UI ao deploy — um ecossistema de ferramentas

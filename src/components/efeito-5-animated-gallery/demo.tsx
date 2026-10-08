@@ -30,12 +30,12 @@ const IMAGES_3 = [
 
 export const DemoVariant1 = () => {
   return (
-    <div className="relative bg-[#05070f]">
+    <div className="relative bg-[#0f070b]">
       <ContainerStagger className="relative z-[9999] -mb-12 place-self-center px-6 pt-12 text-center">
         <ContainerAnimated>
-          <h1 className="font-display text-3xl text-[#e9edf7] md:text-4xl">
+          <h1 className="font-display text-3xl text-[#fbeef4] md:text-4xl">
             Momentos da{" "}
-            <span className="text-[#38e0ff]">
+            <span className="text-[#c77dff]">
               jornada
             </span>
           </h1>
@@ -54,10 +54,10 @@ export const DemoVariant1 = () => {
         </ContainerAnimated>
 
         <ContainerAnimated className="flex items-center justify-center gap-2">
-          <Button className="gap-1 bg-[#2f6bff] text-white hover:bg-[#6f97ff]">
+          <Button className="gap-1 bg-[#ff4d9d] text-white hover:bg-[#ff8fc4]">
             Ver projetos <VideoIcon className="size-4" />
           </Button>
-          <Button variant={"link"} className="text-white/60 hover:text-[#38e0ff]">
+          <Button variant={"link"} className="text-white/60 hover:text-[#c77dff]">
             Sobre mim
           </Button>
         </ContainerAnimated>
@@ -65,7 +65,7 @@ export const DemoVariant1 = () => {
       <div
         className="pointer-events-none absolute z-10 h-[70vh] w-full"
         style={{
-          background: "linear-gradient(to right, #0a1f6b, #2f6bff, #38e0ff)",
+          background: "linear-gradient(to right, #5c0f3a, #ff4d9d, #c77dff)",
           filter: "blur(90px)",
           mixBlendMode: "screen",
           opacity: 0.6,

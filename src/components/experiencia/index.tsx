@@ -17,7 +17,7 @@ const EXPERIENCES = [
       'Troubleshooting, análise de incidentes e orientação aos usuários',
     ],
     tags: ['TOTVS', 'TASY', 'RIS/PACS', 'Troubleshooting', 'Help Desk'],
-    accent: '#2f6bff',
+    accent: '#ff4d9d',
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const EXPERIENCES = [
       'Apoio no atendimento e na resolução de problemas com softwares e hardwares',
     ],
     tags: ['Gestão de Acessos', 'Monitoria', 'Service Desk'],
-    accent: '#38e0ff',
+    accent: '#c77dff',
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const EXPERIENCES = [
       'Suporte básico à rede e aos equipamentos da unidade',
     ],
     tags: ['Atendimento', 'Administrativo', 'Suporte TI'],
-    accent: '#6f97ff',
+    accent: '#ff8fc4',
   },
 ];
 
@@ -70,7 +70,7 @@ export default function ExperienciaSection() {
   return (
     <section
       id="experiencia"
-      className="relative scroll-mt-20 bg-[#05070f] px-6 py-24 md:py-36"
+      className="relative scroll-mt-20 bg-[#0f070b] px-6 py-24 md:py-36"
     >
       <div className="relative mx-auto max-w-5xl">
         {/* Kicker */}
@@ -82,7 +82,7 @@ export default function ExperienciaSection() {
           className="mb-16"
         >
           <motion.div variants={rise} className="flex items-center gap-4 mb-10">
-            <span className="h-px w-10 shrink-0 bg-[#2f6bff]" />
+            <span className="h-px w-10 shrink-0 bg-[#ff4d9d]" />
             <span className="font-code text-xs uppercase tracking-[0.35em] text-white/50">
               02 — Experiência Profissional
             </span>
@@ -90,10 +90,10 @@ export default function ExperienciaSection() {
 
           <motion.h2
             variants={rise}
-            className="font-display leading-none text-[#e9edf7]"
+            className="font-display leading-none text-[#fbeef4]"
             style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}
           >
-            Onde <span style={{ color: '#2f6bff' }}>trabalhei</span>
+            Onde <span style={{ color: '#ff4d9d' }}>trabalhei</span>
           </motion.h2>
         </motion.div>
 
@@ -161,7 +161,7 @@ export default function ExperienciaSection() {
 
                 {/* Role — editorial display */}
                 <h3
-                  className="font-display text-[#e9edf7] leading-tight mb-5"
+                  className="font-display text-[#fbeef4] leading-tight mb-5"
                   style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)' }}
                 >
                   {exp.role}

@@ -14,32 +14,32 @@ const GROUPS: Group[] = [
   {
     label: 'Desenvolvimento',
     skills: [
-      { name: 'Java', color: '#f89820' },
-      { name: 'Lógica de Programação', color: '#a78bfa' },
+      { name: 'Java', color: '#ff8fc4' },
+      { name: 'Lógica de Programação', color: '#c77dff' },
     ],
   },
   {
     label: 'Sistemas corporativos',
     skills: [
-      { name: 'TOTVS', color: '#60a5fa' },
-      { name: 'TASY (Java e HTML5)', color: '#4ade80' },
-      { name: 'RIS/PACS', color: '#2dd4bf' },
+      { name: 'TOTVS', color: '#f9a8d4' },
+      { name: 'TASY (Java e HTML5)', color: '#e879f9' },
+      { name: 'RIS/PACS', color: '#fda4af' },
     ],
   },
   {
     label: 'Suporte & Infra',
     skills: [
-      { name: 'Troubleshooting', color: '#fb923c' },
-      { name: 'Análise de Incidentes', color: '#f472b6' },
-      { name: 'Gestão de Acessos', color: '#38bdf8' },
-      { name: 'Suporte a Hardware e Software', color: '#34d399' },
+      { name: 'Troubleshooting', color: '#fdba74' },
+      { name: 'Análise de Incidentes', color: '#ff4d9d' },
+      { name: 'Gestão de Acessos', color: '#d8b4fe' },
+      { name: 'Suporte a Hardware e Software', color: '#f0abfc' },
     ],
   },
   {
     label: 'Metodologias',
     skills: [
-      { name: 'Scrum', color: '#22d3ee' },
-      { name: 'Métodos Ágeis', color: '#818cf8' },
+      { name: 'Scrum', color: '#fb7185' },
+      { name: 'Métodos Ágeis', color: '#c4b5fd' },
     ],
   },
   {
@@ -120,17 +120,17 @@ function Chip({ name, color }: Skill) {
 export default function SkillsShowcase() {
   const reduce = useReducedMotion()
   return (
-    <section className="relative overflow-hidden bg-[#05070f] px-6 pb-28 pt-2 md:pb-36">
+    <section className="relative overflow-hidden bg-[#0f070b] px-6 pb-28 pt-2 md:pb-36">
       {/* colorful ambient glows */}
       <div
         aria-hidden
         className="pointer-events-none absolute -left-32 top-6 h-80 w-80 rounded-full opacity-[0.13] blur-3xl"
-        style={{ background: 'radial-gradient(circle, #2f6bff, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, #ff4d9d, transparent 70%)' }}
       />
       <div
         aria-hidden
         className="pointer-events-none absolute -right-24 bottom-8 h-80 w-80 rounded-full opacity-[0.12] blur-3xl"
-        style={{ background: 'radial-gradient(circle, #38e0ff, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, #c77dff, transparent 70%)' }}
       />
 
       <motion.div

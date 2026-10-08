@@ -206,7 +206,7 @@ export default function OrbitCarousel() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className={`${avatarSize} ${avatarMargin} mx-auto flex items-center justify-center overflow-hidden rounded-full bg-white p-2.5 ring-4 ring-[#0a0e1c] shadow-xl`}
+              className={`${avatarSize} ${avatarMargin} mx-auto flex items-center justify-center overflow-hidden rounded-full bg-white p-2.5 ring-4 ring-[#1a0d14] shadow-xl`}
             >
               <img
                 src={companies[activeIndex].profile}
@@ -221,7 +221,7 @@ export default function OrbitCarousel() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.15 }}
             >
-              <h2 className={`mt-3 font-display text-[#e9edf7] ${fontSize.name}`}>
+              <h2 className={`mt-3 font-display text-[#fbeef4] ${fontSize.name}`}>
                 {companies[activeIndex].name}
               </h2>
               <div className={`flex items-center justify-center text-white/50 mt-1 font-code ${fontSize.role}`}>
@@ -302,13 +302,13 @@ export default function OrbitCarousel() {
                   onClick={() => handleProfileClick(i)}
                   whileHover={{
                     scale: 1.12,
-                    boxShadow: "0 14px 32px -6px rgba(47,107,255,0.4)",
+                    boxShadow: "0 14px 32px -6px rgba(255,77,157,0.4)",
                   }}
                   whileTap={{ scale: 0.95 }}
                   className={`flex h-full w-full cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white p-2.5 shadow-lg ring-1 transition-colors duration-300 ${
                     isActive
-                      ? "ring-2 ring-[#2f6bff]"
-                      : "ring-white/15 hover:ring-[#2f6bff]/60"
+                      ? "ring-2 ring-[#ff4d9d]"
+                      : "ring-white/15 hover:ring-[#ff4d9d]/60"
                   }`}
                 >
                   <img
@@ -333,7 +333,7 @@ export default function OrbitCarousel() {
             onClick={() => setActiveIndex(index)}
             className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-colors ${
               index === activeIndex 
-                ? "bg-[#2f6bff]" 
+                ? "bg-[#ff4d9d]" 
                 : "bg-white/20"
             }`}
             whileHover={{ scale: 1.3 }}

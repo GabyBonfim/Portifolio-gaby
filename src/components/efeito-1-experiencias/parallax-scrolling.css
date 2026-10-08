@@ -1,7 +1,7 @@
 .parallax {
   width: 100%;
   position: relative;
-  background-color: #05070f;
+  background-color: #0f070b;
 }
 
 .parallax__header {
@@ -27,7 +27,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #05070f;
+  background-color: #0f070b;
   z-index: 5;
 }
 
@@ -81,8 +81,8 @@
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: -0.03em;
-  color: #e9edf7;
-  text-shadow: 0 10px 60px rgba(47, 107, 255, 0.45);
+  color: #fbeef4;
+  text-shadow: 0 10px 60px rgba(255, 77, 157, 0.45);
   margin: 0;
   padding: 0;
   pointer-events: none;
@@ -95,7 +95,7 @@
   left: 0;
   width: 100%;
   height: 35vh;
-  background: linear-gradient(to top, #05070f 0%, rgba(5, 7, 15, 0.8) 25%, transparent 100%);
+  background: linear-gradient(to top, #0f070b 0%, rgba(15, 7, 11, 0.8) 25%, transparent 100%);
   z-index: 10;
   pointer-events: none;
 }
@@ -104,7 +104,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: #05070f;
+  background-color: #0f070b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,19 +116,19 @@
 .osmo-icon-svg {
   width: min(250px, 45vw);
   height: min(250px, 45vw);
-  color: #38e0ff;
-  filter: drop-shadow(0 0 30px rgba(47, 107, 255, 0.45));
+  color: #c77dff;
+  filter: drop-shadow(0 0 30px rgba(255, 77, 157, 0.45));
   animation: pulse-glow 3s infinite ease-in-out;
 }
 
 @keyframes pulse-glow {
   0%, 100% {
     opacity: 0.85;
-    filter: drop-shadow(0 0 25px rgba(56, 224, 255, 0.35));
+    filter: drop-shadow(0 0 25px rgba(199, 125, 255, 0.35));
   }
   50% {
     opacity: 1;
-    filter: drop-shadow(0 0 50px rgba(47, 107, 255, 0.75));
+    filter: drop-shadow(0 0 50px rgba(255, 77, 157, 0.75));
   }
 }
 
